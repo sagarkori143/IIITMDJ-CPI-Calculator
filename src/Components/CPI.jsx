@@ -2,15 +2,19 @@ import React, { useState, useEffect } from 'react';
 import '../styles/home.scss'; // Import your stylesheet
 
 const CPI = () => {
+  // State variables
   const [selectedSemester, setSelectedSemester] = useState(4);
   const [selectedBranch, setSelectedBranch] = useState('cse');
   const [spis, setSpis] = useState(Array(8).fill(''));
   const [tweenedNumber, setTweenedNumber] = useState(0);
 
-  const credits = require('../../static/credits.json');
+  // Credits data
+  const credits = require('../Credits.json');
 
+  // Helper function to generate text for each semester
   const textfield = (i) => `SPI of Semester ${i}`;
 
+  // Helper function to get credits for a particular semester based on branch
   const getSemCredit = (sem) => {
     let branch = 0;
     if (selectedBranch === 'ece') {
@@ -21,16 +25,19 @@ const CPI = () => {
     return parseInt(credits[`sem${sem}`][branch]);
   };
 
+  // Helper function to format a number to a fixed decimal
   const calc = (num) => {
     let numstr = num.toString();
     numstr = numstr.slice(0, numstr.indexOf('.') + 4);
     return Number(numstr);
   };
 
+  // Reset spis when selectedSemester changes
   useEffect(() => {
     setSpis(Array(8).fill(''));
   }, [selectedSemester]);
 
+  // Helper function to determine captions based on CPI
   const captions = () => {
     const totalCPI = calc(obtainedCPI());
     if (totalCPI <= 10 && totalCPI > 8.5) {
@@ -48,8 +55,10 @@ const CPI = () => {
     }
   };
 
+  // Helper function to format CPI for display
   const tweenCPI = () => tweenedNumber.toFixed(1);
 
+  // Helper function to calculate obtained CPI
   const obtainedCPI = () => {
     let totalCredits = 0;
     let obtainedCredits = 0;
@@ -62,12 +71,15 @@ const CPI = () => {
     return calc(cpi);
   };
 
+  // Animate the display of obtained CPI
   useEffect(() => {
     window.TweenLite.to({ tweenedNumber }, 0.8, { setTweenedNumber: obtainedCPI() });
   }, [obtainedCPI]);
 
+  // JSX structure
   return (
     <div>
+      {/* Branch and Semester selection */}
       <div className="nav">
         <div className="branch">
           <label>Branch 📚</label>
@@ -84,6 +96,7 @@ const CPI = () => {
           </select>
         </div>
       </div>
+      {/* Input for each semester */}
       <div className="course-list">
         {[...Array(selectedSemester)].map((_, i) => (
           <div key={i + 1} className="courseitem center">
@@ -100,6 +113,7 @@ const CPI = () => {
           </div>
         ))}
       </div>
+      {/* Result section */}
       <hr style={{ display: obtainedCPI() ? 'block' : 'none' }} />
       <div className="result" style={{ display: obtainedCPI() ? 'block' : 'none' }}>
         <h3>{tweenCPI()}<span className="outof">/10</span></h3>

@@ -1,0 +1,22 @@
+.Homepage{
+    height:100vh;
+    background-color: rgb(22, 20, 20);
+    
+}
+
+.Intro{
+    border:solid red 3px;
+    width:full;
+    height:350px;
+    padding-left: 10%;
+    
+
+}
+.Intro h1{
+    font-size: 70px;
+    
+    
+}
+.Intro {
+    color:aliceblue;
+}

@@ -2,16 +2,20 @@ import React, { useState, useEffect } from 'react';
 import '../styles/home.scss'; // Import your stylesheet
 
 const SPI = () => {
+  // State variables
   const [selectedBranch, setSelectedBranch] = useState('cse');
   const [selectedSemester, setSelectedSemester] = useState(0);
   const [courseCredits, setCourseCredits] = useState([]);
   const [courseGrades, setCourseGrades] = useState([]);
   const [tweenedNumber, setTweenedNumber] = useState(0);
 
-  const cse = require('../../static/cse.json');
-  const ece = require('../../static/ece.json');
-  const me = require('../../static/me.json');
+  // JSON data for different branches
+  const CSE = require('../CSE.json');
+  const ECE = require('../ECE.json');
+  const ME = require('../ME.json');
+  const SM =require('../SM.json');
 
+  // Helper function to get score based on grade
   const getScore = (grade) => {
     switch (grade.toUpperCase()) {
       case 'O':
@@ -41,19 +45,23 @@ const SPI = () => {
     }
   };
 
+  // Helper function to format a number to a fixed decimal
   const calc = (num) => {
     let numstr = num.toString();
     numstr = numstr.slice(0, numstr.indexOf('.') + 4);
     return Number(numstr);
   };
 
+  // Reset courseGrades and courseCredits when selectedSemester or selectedBranch changes
   useEffect(() => {
     setCourseGrades([]);
     setCourseCredits([]);
   }, [selectedSemester, selectedBranch]);
 
-  const course = { cse, ece, me }[selectedBranch];
+  // Select the course data based on the selectedBranch
+  const course = { CSE,ECE,ME }[selectedBranch];
 
+  // Helper function to compute course credits for the selected semester
   const computeCourseCredits = () => {
     const credits = [];
     course[selectedSemester].forEach((el) => {
@@ -62,23 +70,25 @@ const SPI = () => {
     return credits;
   };
 
-  const captions = () => {
+  // Helper function to determine captions based on SPI
+  const Comments = () => {
     const totalSPI = calc(semTotal());
     if (totalSPI <= 10 && totalSPI > 8.5) {
-      return 'Can expect to go to JAPAN 🇯🇵 🤓';
+      return 'Waah beta! Moj kardi';
     } else if (totalSPI <= 8.5 && totalSPI > 7.8) {
-      return ' Machaa, Rocked it 😎';
+      return ' Ye hui na baat!';
     } else if (totalSPI <= 7.8 && totalSPI > 7) {
-      return ' Cool, great score 🥂 ';
+      return ' Doing great! Keep going buddy 🏃‍♂️  ';
     } else if (totalSPI <= 7 && totalSPI > 6) {
-      return 'Needs to put extra effort 🔨';
+      return 'Aise to kaam nahi chalega dost 😐';
     } else if (totalSPI <= 6) {
       return 'Padh lo thoda bro 😐';
     } else {
-      return 'It Seems, you have entered the wrong value ❌';
+      return 'Hey prabhu. Hey Hariram Krishn Jagannatham. Ye kya hua 🫠 ';
     }
   };
 
+  // Helper function to calculate the total SPI
   const semTotal = () => {
     let score = 0;
     let tCredits = 0;
@@ -96,14 +106,18 @@ const SPI = () => {
     return estimated;
   };
 
+  // Total SPI value formatted for display
   const totalSPI = semTotal() === 0 ? null : calc(semTotal());
 
+  // Animate the display of total SPI
   useEffect(() => {
     window.TweenLite.to({ tweenedNumber }, 1.8, { setTweenedNumber: totalSPI });
   }, [totalSPI]);
 
+  // JSX structure
   return (
     <div>
+      {/* Branch and Semester selection */}
       <div className="nav">
         <div className="branch">
           <label>Branch 📚</label>
@@ -120,6 +134,7 @@ const SPI = () => {
           </select>
         </div>
       </div>
+      {/* Table for entering course grades */}
       <table className="course-list">
         {course[selectedSemester].map((course, index) => (
           <tr key={course.id} className="course">
@@ -130,6 +145,7 @@ const SPI = () => {
           </tr>
         ))}
       </table>
+      {/* Result section */}
       <hr style={{ display: totalSPI ? 'block' : 'none' }} />
       <div className="result" style={{ display: totalSPI ? 'block' : 'none' }}>
         <h3>{tweenedNumber.toFixed(1)}<span className="outof">/10</span></h3>

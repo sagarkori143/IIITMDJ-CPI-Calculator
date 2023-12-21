@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/home.scss'; // Import your stylesheet
+
 
 const CPI = () => {
   // State variables

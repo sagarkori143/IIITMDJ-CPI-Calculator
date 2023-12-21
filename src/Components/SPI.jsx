@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/home.scss'; // Import your stylesheet
+
 
 const SPI = () => {
   // State variables
   const [selectedBranch, setSelectedBranch] = useState('cse');
-  const [selectedSemester, setSelectedSemester] = useState(0);
+  const [selectedSemester, setSelectedSemester] = useState();
   const [courseCredits, setCourseCredits] = useState([]);
   const [courseGrades, setCourseGrades] = useState([]);
   const [tweenedNumber, setTweenedNumber] = useState(0);
@@ -121,9 +121,9 @@ const SPI = () => {
       <div className="nav">
         <div className="branch">
           <label>Branch 📚</label>
-          <button onClick={() => setSelectedBranch('cse')} className={selectedBranch === 'cse' ? 'active' : ''}> CSE 💻 </button>
-          <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : ''}> ECE 💡 </button>
-          <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : ''}> ME 🤖 </button>
+          <button onClick={() => setSelectedBranch('cse')} className={selectedBranch === 'cse' ? 'active' : ''}> CSE  </button>
+          <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : ''}> ECE  </button>
+          <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : ''}> ME  </button>
         </div>
         <div className="semester">
           <label>Semester 🎉</label>
@@ -146,10 +146,12 @@ const SPI = () => {
         ))}
       </table>
       {/* Result section */}
+
+      
       <hr style={{ display: totalSPI ? 'block' : 'none' }} />
       <div className="result" style={{ display: totalSPI ? 'block' : 'none' }}>
         <h3>{tweenedNumber.toFixed(1)}<span className="outof">/10</span></h3>
-        <h4>{captions()}</h4>
+        
       </div>
     </div>
   );

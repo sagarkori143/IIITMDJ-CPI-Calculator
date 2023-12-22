@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import credits from "../Credits.json";
+import "./CPI.css"
 
 
 const CPI = () => {
   // State variables
-  const [selectedSemester, setSelectedSemester] = useState(1);
+  const [selectedSemester, setSelectedSemester] = useState(0);
   const [selectedBranch, setSelectedBranch] = useState('ece');
   const [spis, setSpis] = useState(Array(8).fill(''));
+  const [result,setResult]=useState(0);
 
-  // Credits data
-  const credits = require('../Credits.json');
-
-  // Helper function to generat text for each semester.
-  const textfield = (i) => `SPI of Semester ${i}`;
 
   // Helper function to get credits for a particular semester based on your branch
   const getSemCredit = (sem) => {
@@ -31,8 +29,9 @@ const CPI = () => {
   // Helper function to format a number to a fixed decimal
   const calc = (num) => {
     let numstr = num.toString();
-    numstr = numstr.slice(0, numstr.indexOf('.') + 4);
-    return Number(numstr);
+    numstr = numstr.slice(0, numstr.indexOf('.') + 3);
+     setResult(Number(numstr));
+     return;
   };
 
   // Reset spis when selectedSemester changes
@@ -42,16 +41,15 @@ const CPI = () => {
 
   // Helper function to determine captions based on CPI
   const Comments = () => {
-    const totalCPI = calc(obtainedCPI());
-    if (totalCPI <= 10 && totalCPI > 8.5) {
+    if (result <= 10 && result > 8.5) {
       return 'Waah beta! Moj kardi';
-    } else if (totalCPI <= 8.5 && totalCPI > 7.8) {
+    } else if (result <= 8.5 && result > 7.8) {
       return ' Ye hui na baat!';
-    } else if (totalCPI <= 7.8 && totalCPI > 7) {
+    } else if (result <= 7.8 && result > 7) {
       return ' Doing great! Keep going buddy 🏃‍♂️  ';
-    } else if (totalCPI <= 7 && totalCPI > 6) {
+    } else if (result <= 7 && result > 6) {
       return 'Aise to kaam nahi chalega dost 😐';
-    } else if (totalCPI <= 6) {
+    } else if (result <= 6) {
       return 'Padh lo thoda bro 😐';
     } else {
       return 'Hey prabhu. Hey Hariram Krishn Jagannatham. Ye kya hua 🫠 ';
@@ -70,28 +68,28 @@ const CPI = () => {
       obtainedCredits += getSemCredit(index + 1) * parseFloat(value);
     });
     const cpi = obtainedCredits / totalCredits;
+    setResult(cpi);
 
     return calc(cpi);
   };
 
-  // Animate the display of obtained CPI
-  useEffect(() => {
-    window.TweenLite.to({ tweenedNumber }, 0.8, { setTweenedNumber: obtainedCPI() });
-  }, [obtainedCPI]);
+  
+  // Helper function to generat text for each semester.
+  const textfield = (i) => `SPI of Semester ${i}`;
 
   // JSX structure
   return (
-    <div>
+    <div className='Containerx'>
       {/* Branch and Semester selection */}
       <div className="nav">
-        <div className="branch">
+        <div className="branches">
           <label>Branch 📚</label>
           <button onClick={() => setSelectedBranch('cse')} className={selectedBranch === 'cse' ? 'active' : ''}> CSE 💻 </button>
           <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : ''}> ECE 💡 </button>
           <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : ''}> ME 🤖 </button>
         </div>
         <div className="semester">
-          <label>How many Sems done?</label>
+          <label>How many Sems done? </label>
           <select value={selectedSemester} onChange={(e) => setSelectedSemester(Number(e.target.value))} className="smaller">
             {[...Array(8)].map((_, i) => (
               <option key={i + 1} value={i + 1}>{i + 1} Completed </option>
@@ -112,15 +110,17 @@ const CPI = () => {
               placeholder={textfield(i + 1)}
               max="10"
               min="0"
+              required
             />
           </div>
         ))}
       </div>
-      {/* Result section */}
-      <hr style={{ display: obtainedCPI() ? 'block' : 'none' }} />
-      <div className="result" style={{ display: obtainedCPI() ? 'block' : 'none' }}>
-        <h3>{tweenCPI()}<span className="outof">/10</span></h3>
+      <div><button className='calcButton' onClick={obtainedCPI}>Calculate</button></div>
+      <div className='ResultSection'>
+        <h1>{result}</h1>
       </div>
+      
+      
     </div>
   );
 };

@@ -146,7 +146,7 @@ const SPI = () => {
 
   // JSX structure
   return (
-    <div>
+    <div className="Containery">
       {loading ? (
         <div>
           <h1>Loading...</h1>
@@ -155,7 +155,7 @@ const SPI = () => {
         <div>
           
           <div className="nav">
-            <div className="branch">
+            <div className="branchbuttons">
               <label>Branch 📚</label>
               <button
                 onClick={() => setSelectedBranch("cse")}
@@ -199,8 +199,8 @@ const SPI = () => {
             <table className="course-list">
               {course[selectedSemester].map((course, index) => (
                 <tr key={course.id} className="course">
-                  <td className="name">{`${course.courseCode} ${course.courseName}`}</td>
-                  <td>
+                  <td className="name">{`• ${course.courseCode} ${course.courseName}`}</td>
+                  <td className="inputs">
                     <input
                       type="text"
                       placeholder="Course Grade"

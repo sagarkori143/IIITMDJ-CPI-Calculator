@@ -1,0 +1,50 @@
+.Containery{
+    border: solid rgb(63, 86, 113) 4px;
+    border-radius: 15px;
+    width:550px ;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.branchbuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 5px;
+    justify-content: center;
+}
+.branchbuttons button{
+    font-size: 17px;
+
+}
+.semester{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.course-list{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 400px;
+}
+.inputs{
+    
+    float: inline-end;
+}
+.course{
+    border: solid rgb(87, 89, 138) 2.3px;
+    border-radius: 10px;
+    margin-block: 5px;
+    padding: 4px;
+    padding-inline-end: 7px;
+    
+}

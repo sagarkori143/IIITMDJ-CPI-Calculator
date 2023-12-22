@@ -1,0 +1,31 @@
+.Containerx{
+    border: solid rgb(63, 86, 113) 4px;
+    border-radius: 15px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 15px;
+    
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.branches{
+    display: flex;
+    gap: 10px;
+}
+.branches button{
+    padding: 8px;
+}
+
+.calcButton{
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 15px;
+}

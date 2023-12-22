@@ -1,6 +1,7 @@
 import React from "react";
 import "./Homepage.css";
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 
@@ -13,16 +14,30 @@ export const Home = () => {
         <div className="Homepage">
             <div className="Navbar">
                 
-                    <h2>Sagar Kori presents,</h2>
+                    <motion.h2
+                          initial={{ opacity: 0, y: 0 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 1.3 }}
+                    >Sagar Kori presents,</motion.h2>
                
             </div>
             <div className="Container">
             
             
-            <div className="Intro">
-                <h1>CPI Predictor</h1>
-                <h2>For IIITDMJ students</h2>
-            </div>
+            <motion.div className="Intro"
+                  
+            >
+                <motion.h1
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                >CPI Predictor</motion.h1>
+                <motion.h2
+                initial={{ opacity: 0, y: 50 }}
+                animate={(custom) => ({ opacity: 1, y: 0, transition: { delay: custom * 0.5,duration:1 } })}
+                custom={1} // Pass a custom prop to control the delay for the second component
+                >For IIITDMJ students</motion.h2>
+            </motion.div>
 
             <div className="launchbutton" >
                

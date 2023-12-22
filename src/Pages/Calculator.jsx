@@ -3,7 +3,8 @@ import CPI from "../Components/CPI";
 import React, { useState } from "react";
 import "./Calculator.css";
 import { useNavigate } from "react-router-dom";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 
 export const Calculator = () => {
@@ -55,11 +56,30 @@ export const Calculator = () => {
       </div>
 
       <div className="Content">
-        {
-          target?<SPI/>:<CPI/>
-        }
-        
-      </div>
+      <AnimatePresence exitBeforeEnter={false} mode="wait">
+        {target ? (
+          <motion.div
+            key="spi"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 0.5 }}
+          >
+            <SPI />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="cpi"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 0.5 }}
+          >
+            <CPI />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
     </div>
  </div> 
   );

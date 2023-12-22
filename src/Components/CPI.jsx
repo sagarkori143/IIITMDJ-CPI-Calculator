@@ -3,24 +3,27 @@ import React, { useState, useEffect } from 'react';
 
 const CPI = () => {
   // State variables
-  const [selectedSemester, setSelectedSemester] = useState(4);
-  const [selectedBranch, setSelectedBranch] = useState('cse');
+  const [selectedSemester, setSelectedSemester] = useState(1);
+  const [selectedBranch, setSelectedBranch] = useState('ece');
   const [spis, setSpis] = useState(Array(8).fill(''));
-  const [tweenedNumber, setTweenedNumber] = useState(0);
 
   // Credits data
   const credits = require('../Credits.json');
 
-  // Helper function to generate text for each semester
+  // Helper function to generat text for each semester.
   const textfield = (i) => `SPI of Semester ${i}`;
 
-  // Helper function to get credits for a particular semester based on branch
+  // Helper function to get credits for a particular semester based on your branch
   const getSemCredit = (sem) => {
     let branch = 0;
     if (selectedBranch === 'ece') {
       branch = 1;
     } else if (selectedBranch === 'me') {
       branch = 2;
+    } else if(selectedBranch === 'cse'){
+      branch=3;
+    } else if(selectedBranch === 'sm'){
+      branch=4;
     }
     return parseInt(credits[`sem${sem}`][branch]);
   };
@@ -38,25 +41,25 @@ const CPI = () => {
   }, [selectedSemester]);
 
   // Helper function to determine captions based on CPI
-  const captions = () => {
+  const Comments = () => {
     const totalCPI = calc(obtainedCPI());
     if (totalCPI <= 10 && totalCPI > 8.5) {
-      return 'Can expect to go to JAPAN 🇯🇵 🤓';
+      return 'Waah beta! Moj kardi';
     } else if (totalCPI <= 8.5 && totalCPI > 7.8) {
-      return ' Macchaa! Rocked it 😎';
+      return ' Ye hui na baat!';
     } else if (totalCPI <= 7.8 && totalCPI > 7) {
-      return ' Cool, great score 🥂 ';
+      return ' Doing great! Keep going buddy 🏃‍♂️  ';
     } else if (totalCPI <= 7 && totalCPI > 6) {
-      return 'Needs to put extra effort 🔨';
+      return 'Aise to kaam nahi chalega dost 😐';
     } else if (totalCPI <= 6) {
       return 'Padh lo thoda bro 😐';
     } else {
-      return 'It Seems, you have entered the wrong value ❌';
+      return 'Hey prabhu. Hey Hariram Krishn Jagannatham. Ye kya hua 🫠 ';
     }
   };
 
   // Helper function to format CPI for display
-  const tweenCPI = () => tweenedNumber.toFixed(1);
+
 
   // Helper function to calculate obtained CPI
   const obtainedCPI = () => {
@@ -88,10 +91,10 @@ const CPI = () => {
           <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : ''}> ME 🤖 </button>
         </div>
         <div className="semester">
-          <label>Semesters Done 🎉</label>
+          <label>How many Sems done?</label>
           <select value={selectedSemester} onChange={(e) => setSelectedSemester(Number(e.target.value))} className="smaller">
             {[...Array(8)].map((_, i) => (
-              <option key={i + 1} value={i + 1}>{i + 1} Completed 🔥</option>
+              <option key={i + 1} value={i + 1}>{i + 1} Completed </option>
             ))}
           </select>
         </div>
@@ -117,7 +120,6 @@ const CPI = () => {
       <hr style={{ display: obtainedCPI() ? 'block' : 'none' }} />
       <div className="result" style={{ display: obtainedCPI() ? 'block' : 'none' }}>
         <h3>{tweenCPI()}<span className="outof">/10</span></h3>
-        <h4>{captions()}</h4>
       </div>
     </div>
   );

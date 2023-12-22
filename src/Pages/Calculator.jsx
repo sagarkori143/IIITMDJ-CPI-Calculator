@@ -10,15 +10,16 @@ export const Calculator=()=>{
 
         <div>
             <nav>
+
                 
                 
             </nav>
 
-            {/*<div>
+            <div>
                 {
-                    target?<CPI/>:<SPI/>
+                    target?<SPI/>:<CPI/>
                 }
-            </div>*/}
+            </div>
 
         </div>
     )

@@ -2,27 +2,27 @@
 	[
 		{
 			"courseCode": "NS101",
-			"courseName": "Mathematics-I",
+			"courseName": "Subject1",
 			"courseCredits": 4
 		},
 		{
 			"courseCode": "NS102",
-			"courseName": "Engineering Mechanics",
+			"courseName": "Subject2",
 			"courseCredits": 4
 		},
 		{
 			"courseCode": "HS101",
-			"courseName": "Effective Communication Skills",
+			"courseName": "Subject3",
 			"courseCredits": 2
 		},
 		{
 			"courseCode": "ES101",
-			"courseName": "Fundamental of Electrical & Electronics Engg",
+			"courseName": "Subject4",
 			"courseCredits": 5
 		},
 		{
 			"courseCode": "ES102",
-			"courseName": "Fundamental of Computing",
+			"courseName": "Subject5",
 			"courseCredits": 4
 		}
 	],

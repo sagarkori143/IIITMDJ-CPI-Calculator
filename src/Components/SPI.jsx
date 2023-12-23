@@ -224,8 +224,8 @@ const SPI = () => {
           
           {/* Result section */}
           <div className="spiResult">
-            <h1>Result</h1>
-            <h2>{totalSPI}</h2>
+            <h1>Result : </h1>
+            <h1>{totalSPI}</h1>
 
           </div>
         </div>

@@ -89,7 +89,7 @@ const CPI = () => {
         <div className="branches">
           <label>Branch 📚</label>
 
-          
+
           <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
           <strong>ECE</strong>
           <div id="container-stars">
@@ -159,7 +159,14 @@ const CPI = () => {
           </div>
         ))}
       </div>
-      <div><button className='calcButton' onClick={obtainedCPI}>Calculate</button></div>
+      <div>
+        
+      <button class="Calculatorr" data-text="Awesome"  onClick={obtainedCPI}>
+      <span class="actual-text">&nbsp;Calculate&nbsp;</span>
+      <span aria-hidden="true" class="hover-text">&nbsp;Calculate&nbsp;</span>
+      </button>
+
+      </div>
       <div className='ResultSection'>
         <h1>{result}</h1>
       </div>

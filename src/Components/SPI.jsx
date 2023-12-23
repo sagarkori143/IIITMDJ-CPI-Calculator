@@ -20,6 +20,9 @@ const SPI = () => {
 
   // Helper function to get score based on grade
   const getScore = (grade) => {
+    if (grade == null) {
+      return 0; 
+    }
     switch (grade.toUpperCase()) {
       case "O":
         return 10;
@@ -181,18 +184,21 @@ const SPI = () => {
                 <tr key={course.id} className="course">
                   <td className="name">{`• ${course.courseCode} ${course.courseName}`}</td>
                   <td className="inputs">
-                    <input
-                      type="text"
-                      placeholder="Course Grade"
-                      value={courseGrades[index]}
-                      onChange={(e) =>
-                        setCourseGrades([
-                          ...courseGrades.slice(0, index),
-                          e.target.value,
-                          ...courseGrades.slice(index + 1),
-                        ])
-                      }
-                    />
+
+                  <div class="containerInput">
+                  <input 
+                  placeholder="Grades obtained" 
+                  type="text"
+                  value={courseGrades[index] || ''}
+                  onChange={(e) => {
+                    const updatedGrades = [...courseGrades];
+                    updatedGrades[index] = e.target.value;
+                    setCourseGrades(updatedGrades);
+                  }}
+                  
+                  />
+                  </div>
+
                   </td>
                 </tr>
               ))}
@@ -211,3 +217,19 @@ const SPI = () => {
 };
 
 export default SPI;
+
+
+{/*
+
+<input
+type="text"
+placeholder="Course Grade"
+value={courseGrades[index]}
+onChange={(e) =>
+  setCourseGrades([
+    ...courseGrades.slice(0, index),
+    e.target.value,
+    ...courseGrades.slice(index + 1),
+  ])
+}
+/>*/}

@@ -1,12 +1,12 @@
 [
 	[
 	   {
-		  "courseCode":"NS101",
+		  "courseCode":"NS1001",
 		  "courseName":"Mathematics-I",
 		  "courseCredits":4
 	   },
 	   {
-		  "courseCode":"NS102",
+		  "courseCode":"NS1002",
 		  "courseName":"Engineering Mechanics",
 		  "courseCredits":4
 	   },
@@ -16,64 +16,78 @@
 		  "courseCredits":2
 	   },
 	   {
-		  "courseCode":"ES101",
-		  "courseName":"Fundamental of Electrical & Electronics Engg",
-		  "courseCredits":5
+		  "courseCode":"IT1002",
+		  "courseName":"Introduction to Programming In Python",
+		  "courseCredits":3
 	   },
 	   {
-		  "courseCode":"ES102",
-		  "courseName":"Fundamental of Computing",
-		  "courseCredits":4
-	   }
+		  "courseCode":"EC1001",
+		  "courseName":"Introduction to profession",
+		  "courseCredits":1
+	   },{
+		"courseCode":"DS1005",
+		"courseName":"Engineering Graphics",
+		"courseCredits":3
+	 }
 	],
 	[
 	   {
-		  "courseCode":"NS103",
-		  "courseName":"Mathematics-II",
+		  "courseCode":"NS103a",
+		  "courseName":"ODE & PDE",
 		  "courseCredits":4
 	   },
 	   {
 		  "courseCode":"NS104",
-		  "courseName":"Electrodynamics and Optics",
-		  "courseCredits":5
+		  "courseName":"Electrodynamics and Optics(Phy-II)",
+		  "courseCredits":4
 	   },
 	   {
 		  "courseCode":"HS102",
 		  "courseName":"Culture and Human Values",
-		  "courseCredits":2
-	   },
-	   {
-		  "courseCode":"DS101",
-		  "courseName":"Engineering Graphics",
 		  "courseCredits":3
 	   },
 	   {
-		  "courseCode":"ES103",
-		  "courseName":"Data Structure and Algorithm",
-		  "courseCredits":5
+		  "courseCode":"ES1003",
+		  "courseName":"Innovation theory and practice",
+		  "courseCredits":2
+	   },
+	   {
+		  "courseCode":"ES1002",
+		  "courseName":"Basic Electronics",
+		  "courseCredits":4
 	   }
 	],
 	[
 	   {
-		  "courseCode":"ES204",
-		  "courseName":"Digital ELectronics",
-		  "courseCredits":4
+		  "courseCode":"ES2002",
+		  "courseName":"Digital Electronics and Microprocessor Interfacing",
+		  "courseCredits":4	
 	   },
 	   {
-		  "courseCode":"MN201",
-		  "courseName":"Manufacturing Process",
-		  "courseCredits":4
+		  "courseCode":"EC203a",
+		  "courseName":"Principle of Analog Communications",
+		  "courseCredits":2
 	   },
 	   {
-		  "courseCode":"EC201",
-		  "courseName":"Electronics Devices and Circuits",
-		  "courseCredits":5
+		  "courseCode":"EC203b",
+		  "courseName":"Network Theory (Analysis and Synthesis)",
+		  "courseCredits":2
 	   },
 	   {
-		  "courseCode":"EC202",
+		  "courseCode":"EC204b",
 		  "courseName":"Instumentation and Measurement",
 		  "courseCredits":2
 	   },
+	   {
+		"courseCode":"IT2002",
+		"courseName":"Data Structure in Python",
+		"courseCredits":3
+	   },
+	   {
+		"courseCode":"IT2E01",
+		"courseName":"Matlab and Simulink, Pspice",
+		"courseCredits":2
+	  },
 	   {
 		  "courseCode":"NS205",
 		  "courseName":"Elective",
@@ -81,36 +95,51 @@
 	   }
 	],
 	[
-	   {
-		  "courseCode":"ES205",
-		  "courseName":"Fundamentals of Robotics",
-		  "courseCredits":4
-	   },
-	   {
-		  "courseCode":"MS201",
-		  "courseName":"Management Concepts and Technology",
-		  "courseCredits":4
-	   },
-	   {
-		  "courseCode":"EC203",
-		  "courseName":"Network Analysis and synthesis",
-		  "courseCredits":4
-	   },
-	   {
-		  "courseCode":"EC204",
-		  "courseName":"Signals and Systems",
-		  "courseCredits":4
-	   },
-	   {
-		  "courseCode":"EC205",
-		  "courseName":"Microprocessor and interfacing",
-		  "courseCredits":2
-	   },
-	   {
-		  "courseCode":"EC206",
-		  "courseName":"Microprocessor + Electronics",
-		  "courseCredits":2
-	   }
+		{
+		   "courseCode": "EC2005",
+		   "courseName": "Digital Signal Processing",
+		   "courseCredits": 4
+		},
+		{
+		   "courseCode": "EC2006",
+		   "courseName": "Control Systems",
+		   "courseCredits": 4
+		},
+		{
+		   "courseCode": "EC207a",
+		   "courseName": "AI And Its Application",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "EC207b",
+		   "courseName": "Architecture Of Cellular Systems",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "EC2008",
+		   "courseName": "Analog Integrated Circuit",
+		   "courseCredits": 4
+		},
+		{
+		   "courseCode": "IT2E02",
+		   "courseName": "IT Workshop II",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "NS2001",
+		   "courseName": "Biology For Engineers",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "PC2002",
+		   "courseName": "Personality Development Course",
+		   "courseCredits": 1
+		},
+		{
+			"courseCode":"OE00_",
+			"courseName":"Elective",
+			"courseCredits":3
+		 }
 	],
 	[
 	   {

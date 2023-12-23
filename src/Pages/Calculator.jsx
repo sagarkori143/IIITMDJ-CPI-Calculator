@@ -65,7 +65,7 @@ export const Calculator = () => {
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 0.5 }}
           >
-            <SPI />
+            <CPI />
           </motion.div>
         ) : (
           <motion.div
@@ -75,7 +75,7 @@ export const Calculator = () => {
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 0.5 }}
           >
-            <CPI />
+            <SPI />
           </motion.div>
         )}
       </AnimatePresence>

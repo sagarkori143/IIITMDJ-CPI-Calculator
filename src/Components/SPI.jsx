@@ -48,16 +48,6 @@ const SPI = () => {
     }
   };
 
-  // Helper function to format a number to a fixed decimal
-  const calc = (num) => {
-    if (typeof num != Number) {
-      return 0;
-    }
-    let numstr = num.toString();
-    numstr = numstr.slice(0, numstr.indexOf(".") + 4);
-    return Number(numstr);
-  };
-
   // Reset courseGrades and courseCredits when selectedSemester or selectedBranch changes
   useEffect(() => {
     setCourseGrades([]);
@@ -79,7 +69,7 @@ const SPI = () => {
 
   // Helper function to compute course credits for the selected semester
   const computeCourseCredits = () => {
-    if (loading || !course) {
+    if ( !course) {
       console.log("Problem in computeCourseCredits.", loading);
       return [];
     }
@@ -92,15 +82,11 @@ const SPI = () => {
 
   // Helper function to calculate the total SPI
   const semTotal = () => {
-    let estimated = 0;
-    if (loading) {
-      console.log(loading, "So cant run semtotal");
-      return;
-    } else {
-      try {
+    console.log("Calculating semTotal..")
         let score = 0;
         let tCredits = 0;
         let totalCredits = 0;
+        let estimated=0;
 
         tCredits = computeCourseCredits();
         courseGrades.forEach((el, index) => {
@@ -108,19 +94,17 @@ const SPI = () => {
           if (grade !== 0) {
             totalCredits += tCredits[index];
           }
-          score += grade * courseCredits[index];
-          estimated = score / totalCredits;
-        });
-      } catch (e) {
-        console.log("");
-      }
-    }
+          score += grade * tCredits[index];
 
-    return estimated;
+        });
+        estimated = score / totalCredits;
+        console.log("semTotal Calculated",estimated);
+        if(isNaN(estimated)){return 0};
+        return parseFloat(estimated.toFixed(2));
   };
 
   // Total SPI value formatted for display
-  const totalSPI = semTotal() === 0 ? null : calc(semTotal());
+  const totalSPI = semTotal() === 0 ? null :semTotal();
 
   // Helper function to determine captions based on SPI
   const Comments = () => {
@@ -139,10 +123,6 @@ const SPI = () => {
     }
   };
 
-  // Animate the display of total SPI
-  useEffect(() => {
-    setTweenedNumber(totalSPI);
-  }, [totalSPI]);
 
   // JSX structure
   return (
@@ -219,15 +199,10 @@ const SPI = () => {
             </table>
           
           {/* Result section */}
-          <hr style={{ display: totalSPI ? "block" : "none" }} />
-          <div
-            className="result"
-            style={{ display: totalSPI ? "block" : "none" }}
-          >
-            <h3>
-              {tweenedNumber}
-              <span className="outof">/10</span>
-            </h3>
+          <div className="spiResult">
+            <h1>Result</h1>
+            <h2>{totalSPI}</h2>
+
           </div>
         </div>
       )}

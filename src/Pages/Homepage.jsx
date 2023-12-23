@@ -15,10 +15,10 @@ export const Home = () => {
             <div className="Navbar">
                 
                     <motion.h2
-                          initial={{ opacity: 0, y: 0 }}
+                          initial={{ opacity: 0.3, y: 0 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 1.3 }}
-                    >Sagar Kori presents,</motion.h2>
+                          transition={{ duration: 1.5 }}
+                    >By Sagar Kori</motion.h2>
                
             </div>
             <div className="Container">

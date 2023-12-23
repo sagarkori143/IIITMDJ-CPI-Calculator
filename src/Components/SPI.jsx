@@ -140,27 +140,45 @@ const SPI = () => {
           <div className="nav">
             <div className="branchbuttons">
               <label>Branch 📚</label>
-              <button
-                onClick={() => setSelectedBranch("cse")}
-                className={selectedBranch === "cse" ? "active" : "branches"}
-              >
-                {" "}
-                CSE{" "}
-              </button>
-              <button
-                onClick={() => setSelectedBranch("ece")}
-                className={selectedBranch === "ece" ? "active" : "branches"}
-              >
-                {" "}
-                ECE{" "}
-              </button>
-              <button
-                onClick={() => setSelectedBranch("me")}
-                className={selectedBranch === "me" ? "active" : "branches"}
-              >
-                {" "}
-                ME{" "}
-              </button>
+              
+             
+          <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
+          <strong>ECE</strong>
+          <div id="container-stars">
+          <div id="stars"></div>
+          </div>
+
+          <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          </div>
+          </button>
+
+          <button onClick={() => setSelectedBranch('cse')} className={selectedBranch === 'cse' ? 'active' : 'btnn'} type="button">
+          <strong>CSE</strong>
+          <div id="container-stars">
+          <div id="stars"></div>
+          </div>
+
+          <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          </div>
+          </button>
+
+          <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : 'btnn'} type="button">
+          <strong>ME</strong>
+          <div id="container-stars">
+          <div id="stars"></div>
+          </div>
+
+          <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          </div>
+          </button>
+
+
             </div>
             <div className="semester">
               <label>Semester 🎉</label>

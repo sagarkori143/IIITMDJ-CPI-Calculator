@@ -88,9 +88,45 @@ const CPI = () => {
       <div className="nav">
         <div className="branches">
           <label>Branch 📚</label>
-          <button onClick={() => setSelectedBranch('cse')} className={selectedBranch === 'cse' ? 'active' : ''}> CSE 💻 </button>
-          <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : ''}> ECE 💡 </button>
-          <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : ''}> ME 🤖 </button>
+
+          
+          <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
+          <strong>ECE</strong>
+          <div id="container-stars">
+          <div id="stars"></div>
+          </div>
+
+          <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          </div>
+          </button>
+
+          <button onClick={() => setSelectedBranch('cse')} className={selectedBranch === 'cse' ? 'active' : 'btnn'} type="button">
+          <strong>CSE</strong>
+          <div id="container-stars">
+          <div id="stars"></div>
+          </div>
+
+          <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          </div>
+          </button>
+
+          <button onClick={() => setSelectedBranch('me')} className={selectedBranch === 'me' ? 'active' : 'btnn'} type="button">
+          <strong>ME</strong>
+          <div id="container-stars">
+          <div id="stars"></div>
+          </div>
+
+          <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          </div>
+          </button>
+    
+
         </div>
         <div className="semester">
           <label>How many Sems done? </label>

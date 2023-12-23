@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import credits from "../Credits.json";
 import "./CPI.css"
 
-
 const CPI = () => {
   // State variables
-  const [selectedSemester, setSelectedSemester] = useState(0);
+  const [selectedSemester, setSelectedSemester] = useState(4);
   const [selectedBranch, setSelectedBranch] = useState('ece');
   const [spis, setSpis] = useState(Array(8).fill(''));
   const [result,setResult]=useState(0);
@@ -26,18 +25,11 @@ const CPI = () => {
     return parseInt(credits[`sem${sem}`][branch]);
   };
 
-  // Helper function to format a number to a fixed decimal
-  const calc = (num) => {
-    let numstr = num.toString();
-    numstr = numstr.slice(0, numstr.indexOf('.') + 3);
-     setResult(Number(numstr));
-     return;
-  };
-
   // Reset spis when selectedSemester changes
   useEffect(() => {
     setSpis(Array(8).fill(''));
-  }, [selectedSemester]);
+    setResult(0);
+  }, [selectedSemester,selectedBranch]);
 
   // Helper function to determine captions based on CPI
   const Comments = () => {
@@ -63,15 +55,27 @@ const CPI = () => {
   const obtainedCPI = () => {
     let totalCredits = 0;
     let obtainedCredits = 0;
-    spis.forEach((value, index) => {
-      totalCredits += getSemCredit(index + 1);
-      obtainedCredits += getSemCredit(index + 1) * parseFloat(value);
+    console.log("spis entered:", spis);
+      spis.forEach((value, index) => {
+      const numericValue = parseFloat(value);
+      // Check if the value is a number
+      if (!isNaN(numericValue)) {
+        totalCredits += getSemCredit(index + 1);
+        console.log("total credits single", totalCredits);
+  
+        obtainedCredits += getSemCredit(index + 1) * numericValue;
+      }
     });
+  
+    console.log("total credits", totalCredits);
+    console.log("obtained credits", obtainedCredits);
+  
     const cpi = obtainedCredits / totalCredits;
     setResult(cpi);
-
-    return calc(cpi);
+  
+    return cpi;
   };
+  
 
   
   // Helper function to generat text for each semester.
@@ -98,20 +102,24 @@ const CPI = () => {
         </div>
       </div>
       {/* Input for each semester */}
-      <div className="course-list">
+      <div className="semlist">
         {[...Array(selectedSemester)].map((_, i) => (
-          <div key={i + 1} className="courseitem center">
-            <p>{`Semester ${i + 1}`}</p>
-            <input
-              type="number"
-              step="0.1"
-              value={spis[i]}
-              onChange={(e) => setSpis([...spis.slice(0, i), e.target.value, ...spis.slice(i + 1)])}
-              placeholder={textfield(i + 1)}
-              max="10"
-              min="0"
-              required
-            />
+          <div key={i + 1} className="semlist-items">
+            <p>{`• Semester ${i + 1}`}</p>
+            
+            <div class="containerInput">
+           <input
+            placeholder="SPI Obtained"
+             type="text"
+             value={spis[i]}
+             onChange={(e) => setSpis([...spis.slice(0, i), e.target.value, ...spis.slice(i + 1)])}
+             max="10"
+             min="0"
+             required
+
+             />
+          </div>
+            
           </div>
         ))}
       </div>
@@ -126,3 +134,17 @@ const CPI = () => {
 };
 
 export default CPI;
+
+
+/*
+<input
+              type="number"
+              step="0.1"
+              value={spis[i]}
+              onChange={(e) => setSpis([...spis.slice(0, i), e.target.value, ...spis.slice(i + 1)])}
+              placeholder={textfield(i + 1)}
+              max="10"
+              min="0"
+              required
+            />
+*/

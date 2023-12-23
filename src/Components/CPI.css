@@ -1,5 +1,5 @@
 .Containerx{
-    border: solid rgb(63, 86, 113) 4px;
+    border: solid rgb(84, 110, 140) 4px;
     border-radius: 15px;
     width: 500px;
     display: flex;
@@ -29,3 +29,82 @@
     padding: 5px;
     border-radius: 15px;
 }
+
+.semlist{
+    display: grid;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+.semlist-items{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border: solid rgb(87, 89, 138) 2.3px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+/*Properties for input in sem options */
+
+.semlist .containerInput {
+    background-color: rgb(14, 13, 13);
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 4px 0;
+    z-index: 1;
+    font-size: 15px;
+  }
+  
+  .semlist  .containerInput::before {
+    content: '';
+    width: 110%;
+    aspect-ratio: 1;
+    position: absolute;
+    inset: 0 0 0 0;
+    margin: auto;
+    animation: rotate6234 2.3s ease-in-out infinite;
+    z-index: -1;
+    background-image: conic-gradient(from 0deg at 50% 50%, #073AFF00 0%, #FF0000FF 25%, #073AFF00 25%);
+  }
+  
+  .semlist .containerInput > input {
+    width: 150px;
+    height: 50%;
+    font-size: inherit;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    background-color: #0a0a0a;
+    outline: 5px solid #0a0a0a;
+  }
+  
+  .semlist .containerInput > input:focus {
+    outline: none;
+  }
+  
+  .semlist .containerInput > input:not(:placeholder-shown) {
+    outline: none;
+  }
+  
+  .semlist .containerInput > input:not(:placeholder-shown):valid {
+    outline: 4px solid rgb(0, 255, 183);
+    border-radius: 0;
+  }
+  
+  @keyframes rotate6234 {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }

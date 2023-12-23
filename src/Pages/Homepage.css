@@ -87,3 +87,19 @@
     fill: white;
     transform: scale(1.2);
 } 
+
+
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Change the color as needed */
+    border-radius: 6px;
+    
+  }
+  ::-webkit-scrollbar {
+    width: 10px; /* Change the width as needed */
+    height: 10px; /* Change the height as needed */
+  }  

@@ -1,6 +1,6 @@
 # Firstly clone the code to your local
 
-## 'git clone your_forked_repo_ssh_code'
+### `git clone your_forked_repo_ssh_code`
 
 # Chage directory to Calculator
 cd ./Calculator

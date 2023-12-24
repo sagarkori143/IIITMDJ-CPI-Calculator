@@ -103,7 +103,7 @@ const SPI = () => {
         estimated = score / totalCredits;
         console.log("semTotal Calculated",estimated);
         if(isNaN(estimated)){return 0};
-        return parseFloat(estimated.toFixed(2));
+        return parseFloat(estimated.toFixed(1));
   };
 
   // Total SPI value formatted for display

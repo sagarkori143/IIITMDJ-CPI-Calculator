@@ -1,56 +1,61 @@
 [
 	[
 		{
-			"courseCode": "NS101",
-			"courseName": "Subject1",
+			"courseCode": "CS1001",
+			"courseName": "Introduction to Profession",
+			"courseCredits": 1
+		},
+		{
+			"courseCode": "ES1002",
+			"courseName": "Fundamentals of Electrical and Electronics Engineering",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "NS102",
-			"courseName": "Subject2",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "HS101",
-			"courseName": "Subject3",
+			"courseCode": "HS1001",
+			"courseName": "Effective Communications",
 			"courseCredits": 2
 		},
 		{
-			"courseCode": "ES101",
-			"courseName": "Subject4",
-			"courseCredits": 5
+			"courseCode": "IT1001",
+			"courseName": "Introduction to Programming In C",
+			"courseCredits": 3
 		},
 		{
-			"courseCode": "ES102",
-			"courseName": "Subject5",
+			"courseCode": "NS1001",
+			"courseName": "Mathematics-I",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "NS1002",
+			"courseName": "Engineering Mechanics",
 			"courseCredits": 4
 		}
 	],
 	[
 		{
-			"courseCode": "NS103",
-			"courseName": "Mathematics-II",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "NS104",
-			"courseName": "Electrodynamics and Optics",
-			"courseCredits": 5
-		},
-		{
-			"courseCode": "HS102",
-			"courseName": "Culture and Human Values",
-			"courseCredits": 2
-		},
-		{
-			"courseCode": "DS101",
+			"courseCode": "DS1005",
 			"courseName": "Engineering Graphics",
 			"courseCredits": 3
 		},
 		{
-			"courseCode": "ES103",
-			"courseName": "Data Structure and Algorithm",
-			"courseCredits": 5
+			"courseCode": "ES1003",
+			"courseName": "Innovation Theory and Practice",
+			"courseCredits": 2
+		},
+		{
+			"courseCode": "HS1002",
+			"courseName": "Indian Culture, Ethics and Human Values",
+			"courseCredits": 3
+		},
+		{
+			"courseCode": "NS1004",
+			"courseName": "Physics II",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "NS103b",
+			"courseName": "Linear Algebra",
+			"courseCredits": 4
 		}
 	],
 	[

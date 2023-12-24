@@ -261,6 +261,25 @@ body{
     }
   }
 
+  /*Properties for the semester drop down*/
+.SemDropDown{
+  font-size: 1rem;
+  background-color: rgb(20, 20, 39);
+  border-radius: 10px;
+  color:rgb(214, 215, 224);
+  margin-inline-start: 5px;
+  padding-inline: 5px;
+  align-items: center;
+  font-weight: 600;
+  border: none;
+}
+.SemOptions{
+  color: rgb(195, 196, 235);
+  border: none;
+}
+.SemOptions:hover{
+  transform: scale(115%);
+}
 
 .Content{
     border-radius: 15px;
@@ -282,5 +301,9 @@ body{
 .Footer a{margin-bottom: 5px;}
 .Footer img{
   filter: hue-rotate(90deg);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 

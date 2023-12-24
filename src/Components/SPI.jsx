@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-import gsap from "gsap";
 import eceDATA from "../ECE.json";
 import cseDATA from "../CSE.json";
 import meDATA from "../ME.json";
-import smData from "../SM.json";
 import "./SPI.css";
 
 const SPI = () => {
@@ -13,12 +10,11 @@ const SPI = () => {
   const [selectedSemester, setSelectedSemester] = useState(0);
   const [courseCredits, setCourseCredits] = useState([]);
   const [courseGrades, setCourseGrades] = useState([]);
-  const [tweenedNumber, setTweenedNumber] = useState(0);
   const [loading, setLoading] = useState(false);
 
   console.log(eceDATA);
 
-  // Helper function to get score based on grade
+// Helper function to get score based on grade
   const getScore = (grade) => {
     if (grade == null) {
       return 0; 
@@ -49,15 +45,15 @@ const SPI = () => {
       default:
         return 0;
     }
-  };
+};
 
-  // Reset courseGrades and courseCredits when selectedSemester or selectedBranch changes
+// Reset courseGrades and courseCredits when selectedSemester or selectedBranch changes
   useEffect(() => {
     setCourseGrades([]);
     setCourseCredits([]);
   }, [selectedSemester, selectedBranch]);
 
-  // Select the course data based on the selectedBranch
+// Select the course data based on the selectedBranch
 
   const selectedBranchData = loading
     ? [] // If still loading, set an empty array
@@ -139,7 +135,7 @@ const SPI = () => {
           
           <div className="nav">
             <div className="branchbuttons">
-              <label>Branch 📚</label>
+              <label>Branch 💫</label>
               
              
           <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
@@ -181,7 +177,7 @@ const SPI = () => {
 
             </div>
             <div className="semester">
-              <label>Semester 🎉</label>
+              <label>Semester ✍️</label>
               <select
                 value={selectedSemester}
                 onChange={(e) => setSelectedSemester(Number(e.target.value))}
@@ -235,19 +231,3 @@ const SPI = () => {
 };
 
 export default SPI;
-
-
-{/*
-
-<input
-type="text"
-placeholder="Course Grade"
-value={courseGrades[index]}
-onChange={(e) =>
-  setCourseGrades([
-    ...courseGrades.slice(0, index),
-    e.target.value,
-    ...courseGrades.slice(index + 1),
-  ])
-}
-/>*/}

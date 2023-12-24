@@ -87,7 +87,7 @@ const CPI = () => {
       {/* Branch and Semester selection */}
       <div className="nav">
         <div className="branches">
-          <label>Branch 📚</label>
+          <label>Branch 💫</label>
 
 
           <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
@@ -130,9 +130,9 @@ const CPI = () => {
         </div>
         <div className="semester">
           <label>How many Sems done? </label>
-          <select value={selectedSemester} onChange={(e) => setSelectedSemester(Number(e.target.value))} className="smaller">
+          <select value={selectedSemester} onChange={(e) => setSelectedSemester(Number(e.target.value))} className="SemDropDown">
             {[...Array(8)].map((_, i) => (
-              <option key={i + 1} value={i + 1}>{i + 1} Completed </option>
+              <option key={i + 1} value={i + 1} className="SemOptions">{i + 1} Completed </option>
             ))}
           </select>
         </div>
@@ -168,7 +168,8 @@ const CPI = () => {
 
       </div>
       <div className='ResultSection'>
-        <h1>{result}</h1>
+        <h1>{result>0?result:""}</h1>
+        <p>{result>10?"Looks like you entered some wrong values":""}</p>
       </div>
       
       

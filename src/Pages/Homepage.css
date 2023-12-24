@@ -91,15 +91,15 @@
 
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px; /* Change the width as needed */
   }
   
   ::-webkit-scrollbar-thumb {
     background-color: #3498db; /* Change the color as needed */
     border-radius: 6px;
-    
-  }
-  ::-webkit-scrollbar {
-    width: 10px; /* Change the width as needed */
-    height: 10px; /* Change the height as needed */
   }  
+
+html {
+    scroll-behavior: smooth;
+}
+  

@@ -440,7 +440,7 @@ body{
   
 
   /*Properties for the semester drop down*/
-.SemDropDown{
+.SemDropDown,.BatchDropDown{
   font-size: 1rem;
   background-color: rgb(20, 20, 39);
   border-radius: 10px;
@@ -450,13 +450,20 @@ body{
   align-items: center;
   font-weight: 600;
   border: none;
+  padding: 4.5px;
+  padding-inline: 8px;
 }
-.SemOptions{
+.SemOptions, .BatchOptions{
   color: rgb(195, 196, 235);
   border: none;
 }
-.SemOptions:hover{
-  transform: scale(115%);
+
+
+.SemesterAndBatches{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 25px;
 }
 
 .Content{

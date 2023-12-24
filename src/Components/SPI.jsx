@@ -11,6 +11,7 @@ const SPI = () => {
   const [courseCredits, setCourseCredits] = useState([]);
   const [courseGrades, setCourseGrades] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [selectedBatch,setSelectedBatch]=useState(2022);
 
   console.log(eceDATA);
 
@@ -173,9 +174,8 @@ const SPI = () => {
           <div class="circle"></div>
           </div>
           </button>
-
-
-            </div>
+          </div>
+          <div className="SemesterAndBatches">
             <div className="semester">
               <label>Semester ✍️</label>
               <select
@@ -190,7 +190,36 @@ const SPI = () => {
                 ))}
               </select>
             </div>
-          </div>
+
+            <div className="Batch">
+              <label>Batch ✌️</label>
+              <select
+                value={selectedBatch}
+                onChange={(e) => setSelectedBatch(Number(e.target.value))}
+                className="BatchDropDown"
+              >
+                <option className="BatchOptions">
+                    2020
+                </option>
+                <option className="BatchOptions">
+                    2021
+                </option>
+                <option className="BatchOptions">
+                    2022
+                </option>
+                <option className="BatchOptions">
+                    2023
+                </option>
+
+              </select>
+            </div> 
+
+          </div> 
+
+
+
+            
+        </div>
           {/* Table for entering course grades */}
           
             <table className="course-list">

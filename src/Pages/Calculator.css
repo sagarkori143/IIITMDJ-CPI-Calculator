@@ -279,7 +279,7 @@ body{
   gap: 15px;
   font-size: 13px;
 }
-.Footer a{padding-bottom: 5px;}
+.Footer a{margin-bottom: 5px;}
 .Footer img{
   filter: hue-rotate(90deg);
 }

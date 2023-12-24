@@ -69,7 +69,7 @@ const CPI = () => {
 
     console.log("total credits", totalCredits);
     console.log("obtained credits", obtainedCredits);
-
+    console.log("Calc cpi: ",cpi);
     const cpi = obtainedCredits / totalCredits;
     setResult(parseFloat(cpi.toFixed(2)));
 

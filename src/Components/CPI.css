@@ -245,7 +245,7 @@ strong {
   
   .semlist  .containerInput::before {
     content: '';
-    width: 110%;
+    width: 100%;
     aspect-ratio: 1;
     position: absolute;
     inset: 0 0 0 0;
@@ -262,6 +262,7 @@ strong {
     color: #fff;
     border: none;
     padding: 12px;
+    padding-top: 13px;
     background-color: #0a0a0a;
     outline: 5px solid #0a0a0a;
   }
@@ -275,7 +276,7 @@ strong {
   }
   
   .semlist .containerInput > input:not(:placeholder-shown):valid {
-    outline: 4px solid rgb(0, 255, 183);
+    border-bottom: 4px solid rgb(0, 255, 183);
     border-radius: 0;
   }
   

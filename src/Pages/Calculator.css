@@ -272,4 +272,15 @@ body{
     align-items: center;
     
 }
+.Footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+}
+.Footer a{padding-bottom: 5px;}
+.Footer img{
+  filter: hue-rotate(90deg);
+}
 

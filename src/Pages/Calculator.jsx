@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./Calculator.css";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
+import StatCounter from "../Components/StatsCounter";
 
 
 
@@ -11,7 +12,6 @@ export const Calculator = () => {
   const [target, setTarget] = useState(0);
   const navigate=useNavigate();
   return (
-    <div id="particles-js">
     <div className="mainContainer">
       <div className="Topper">
         <div className="Backbutton">
@@ -79,8 +79,12 @@ export const Calculator = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
+      <div className="Footer">
+        <a>Visit Counter: </a>
+        <StatCounter/>
+
+      </div>
     </div>
-    </div>
- </div> 
   );
 };

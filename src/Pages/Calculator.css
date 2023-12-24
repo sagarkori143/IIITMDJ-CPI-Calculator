@@ -260,6 +260,184 @@ body{
       left: -68%;
     }
   }
+.Socials{
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+  /*Properties for social*/
+  .gitBtn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(31, 31, 31);
+    overflow: hidden;
+  }
+  
+  .gitsvgIcon {
+    transition-duration: .3s;
+  }
+  
+  .gitsvgIcon path {
+    fill: white;
+  }
+  
+  .gittext {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+  }
+  
+  .gitBtn:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+  }
+  
+  .gitBtn:hover .gittext {
+    opacity: 1;
+    transition-duration: .4s;
+  }
+  
+  .gitBtn:hover .gitsvgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+  }
+  
+  .instaBtn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    overflow: hidden;
+  }
+  
+  .instasvgIcon {
+    transition-duration: .3s;
+  }
+  
+  .instasvgIcon path {
+    fill: white;
+  }
+  
+  .instatext {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+  }
+  
+  .instaBtn:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+  }
+  
+  .instaBtn:hover .instatext {
+    opacity: 1;
+    transition-duration: .4s;
+  }
+  
+  .instaBtn:hover .instasvgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+  }
+
+  .linkedinBtn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background: #0077B5; /* LinkedIn color theme */
+    overflow: hidden;
+}
+
+.linkedinsvgIcon {
+    transition-duration: .3s;
+}
+
+.linkedinsvgIcon path {
+    fill: white;
+}
+
+.linkedintext {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+}
+
+
+.emailBtn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background: #4285F4; /* Email color theme */
+  overflow: hidden;
+}
+
+.emailsvgIcon {
+  transition-duration: .3s;
+}
+
+.emailsvgIcon path {
+  fill: white;
+}
+
+.emailtext {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: .4s;
+}
+
+
+
+  
 
   /*Properties for the semester drop down*/
 .SemDropDown{
@@ -292,14 +470,31 @@ body{
     
 }
 .Footer{
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between  ;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+}
+.Contact{
+  margin-inline-start: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Counter{
+  margin-inline-end: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
   font-size: 13px;
 }
-.Footer a{margin-bottom: 5px;}
-.Footer img{
+.Counter a{margin-bottom: 5px;}
+.Counter img{
   filter: hue-rotate(90deg);
 }
 

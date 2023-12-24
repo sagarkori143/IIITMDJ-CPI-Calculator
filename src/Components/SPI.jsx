@@ -43,7 +43,7 @@ const SPI = () => {
       case "D":
         return 3;
       case "F":
-        return 2;
+        return 0;
       case "SS":
         return 0;
       default:

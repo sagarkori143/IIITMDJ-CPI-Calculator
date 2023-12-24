@@ -1,116 +1,130 @@
 [
 	[
 		{
-			"courseCode": "NS101",
-			"courseName": "Mathematics-I",
-			"courseCredits": 4
+		   "courseCode":"NS1001",
+		   "courseName":"Mathematics-I",
+		   "courseCredits":4
 		},
 		{
-			"courseCode": "NS102",
-			"courseName": "Engineering Mechanics",
-			"courseCredits": 4
+		   "courseCode":"NS1002",
+		   "courseName":"Engineering Mechanics",
+		   "courseCredits":4
 		},
 		{
-			"courseCode": "HS101",
-			"courseName": "Effective Communication Skills",
-			"courseCredits": 2
+		   "courseCode":"HS101",
+		   "courseName":"Effective Communication Skills",
+		   "courseCredits":2
 		},
 		{
-			"courseCode": "ES101",
-			"courseName": "Fundamental of Electrical & Electronics Engg",
-			"courseCredits": 5
+		   "courseCode":"IT1002",
+		   "courseName":"Introduction to Programming In Python",
+		   "courseCredits":3
 		},
 		{
-			"courseCode": "ES102",
-			"courseName": "Fundamental of Computing",
-			"courseCredits": 4
+		   "courseCode":"EC1001",
+		   "courseName":"Introduction to profession",
+		   "courseCredits":1
+		},{
+		 "courseCode":"DS1005",
+		 "courseName":"Engineering Graphics",
+		 "courseCredits":3
+	  }
+	 ],
+	 [
+		{
+		   "courseCode":"NS103a",
+		   "courseName":"ODE & PDE",
+		   "courseCredits":4
+		},
+		{
+		   "courseCode":"NS104",
+		   "courseName":"Electrodynamics and Optics(Phy-II)",
+		   "courseCredits":4
+		},
+		{
+		   "courseCode":"HS102",
+		   "courseName":"Culture and Human Values",
+		   "courseCredits":3
+		},
+		{
+		   "courseCode":"ES1003",
+		   "courseName":"Innovation theory and practice",
+		   "courseCredits":2
+		},
+		{
+		   "courseCode":"ES1002",
+		   "courseName":"Basic Electronics",
+		   "courseCredits":4
 		}
-	],
-	[
+	 ], 
+	 [
 		{
-			"courseCode": "NS103",
-			"courseName": "Mathematics-II",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "NS104",
-			"courseName": "Electrodynamics and Optics",
-			"courseCredits": 5
-		},
-		{
-			"courseCode": "HS102",
-			"courseName": "Culture and Human Values",
-			"courseCredits": 2
-		},
-		{
-			"courseCode": "DS101",
-			"courseName": "Engineering Graphics",
-			"courseCredits": 3
-		},
-		{
-			"courseCode": "ES103",
-			"courseName": "Data Structure and Algorithm",
-			"courseCredits": 5
-		}
-	],
-	[
-		{
-			"courseCode": "ES204",
-			"courseName": "Digital ELectronics",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "MN201",
+			"courseCode": "Manufacturing Process",
 			"courseName": "Manufacturing Process",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "ME201",
-			"courseName": "Kinematics and Dyanamics of Machines",
-			"courseCredits": 5
-		},
-		{
-			"courseCode": "ME202",
-			"courseName": "IT Workshop",
-			"courseCredits": 2
-		},
-		{
-			"courseCode": "NS205",
-			"courseName": "Elective",
-			"courseCredits": 4
-		}
-	],
-	[
-		{
-			"courseCode": "ES205",
-			"courseName": "Fundamentals of Robotics",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "MS201",
-			"courseName": "Management Concepts and Technology",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "ME203",
-			"courseName": "Thermodynamics",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "ME204",
+			"courseCode": "ME2003",
 			"courseName": "Solid Mechanics",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "ME205",
-			"courseName": "Engineering Material",
+			"courseCode": "ME2004",
+			"courseName": "Engineering Thermodynamics",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "IT2002",
+			"courseName": "DSA in Python",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "IT2M01",
+			"courseName": "Solidworks",
 			"courseCredits": 2
-        },
-        {
-            "courseCode": "ME206",
-            "courseName": "Thermodynamics + Solid Mechanics",
-            "courseCredits": 2
-        }
+		},
+		{
+			"courseCode": "Elective",
+			"courseName": "Elective",
+			"courseCredits": 3
+		}
+	],
+	[
+		{
+			"courseCode": "ME2005",
+			"courseName": "Engineering Materials And Characterization",
+			"courseCredits": 3
+		},
+		{
+			"courseCode": "ME2006",
+			"courseName": "Kinematics And Dynamics Of Machines",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "ME2007",
+			"courseName": "Manufacturing Technology",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "ME2008",
+			"courseName": "Fluid Mechanics And Machines",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "IT2M02",
+			"courseName": "IT Workshop II",
+			"courseCredits": 2
+		},
+		{
+			"courseCode": "NS2001",
+			"courseName": "Biology For Engineers",
+			"courseCredits": 2
+		},
+		{
+			"courseCode": "PC2002",
+			"courseName": "Personality Development Course",
+			"courseCredits": 1
+		}
 	],
 	[
 		{

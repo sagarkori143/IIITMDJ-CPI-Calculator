@@ -16,8 +16,6 @@ const SPI = () => {
   const [loading, setLoading] = useState(false);
   const [selectedBatch,setSelectedBatch]=useState(2022);
 
-  console.log(ECE22);
-
 // Helper function to get score based on grade
   const getScore = (grade) => {
     if (grade == null) {

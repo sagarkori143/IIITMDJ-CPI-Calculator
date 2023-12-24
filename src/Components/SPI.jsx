@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import eceDATA from "../ECE.json";
-import cseDATA from "../CSE.json";
-import meDATA from "../ME.json";
+import ECE22 from "../ECE.json";
+import CSE22 from "../CSE.json";
+import ME22 from "../ME.json";
+import ECE23 from "../ECE23.json";
+import CSE23 from "../CSE23.json";
+import ME23 from "../ME23.json";
 import "./SPI.css";
 
 const SPI = () => {
@@ -12,8 +15,6 @@ const SPI = () => {
   const [courseGrades, setCourseGrades] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedBatch,setSelectedBatch]=useState(2022);
-
-  console.log(eceDATA);
 
 // Helper function to get score based on grade
   const getScore = (grade) => {
@@ -56,13 +57,23 @@ const SPI = () => {
 
 // Select the course data based on the selectedBranch
 
-  const selectedBranchData = loading
-    ? [] // If still loading, set an empty array
-    : selectedBranch === "cse"
-    ? cseDATA
-    : selectedBranch === "ece"
-    ? eceDATA
-    : meDATA;
+const selectedBranchData = !(selectedBatch === 2023)
+  ? (loading ? [] : (
+      selectedBranch === "cse" ? CSE22 :
+      selectedBranch === "ece" ? ECE22 :
+      selectedBranch === "me" ? ME22 :
+      // Handle the default case here or set it to something else
+      null
+    ))
+  :
+  (loading ? [] : (
+    selectedBranch === "cse" ? CSE23 :
+    selectedBranch === "ece" ? ECE23 :
+    selectedBranch === "me" ? ME23 :
+    // Handle the default case here or set it to something else
+    null
+  ));
+
 
   // Use selectedBranchData instead of directly using ECE
   const course = selectedBranchData;

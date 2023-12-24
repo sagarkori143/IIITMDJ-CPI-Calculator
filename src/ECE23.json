@@ -1,0 +1,267 @@
+[
+	[
+	   {
+		  "courseCode":"NS1001",
+		  "courseName":"Mathematics-I",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"NS1002",
+		  "courseName":"Engineering Mechanics",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"HS101",
+		  "courseName":"Effective Communication Skills",
+		  "courseCredits":2
+	   },
+	   {
+		  "courseCode":"IT1002",
+		  "courseName":"Introduction to Programming In Python",
+		  "courseCredits":3
+	   },
+	   {
+		  "courseCode":"EC1001",
+		  "courseName":"Introduction to profession",
+		  "courseCredits":1
+	   },{
+		"courseCode":"DS1005",
+		"courseName":"Engineering Graphics",
+		"courseCredits":3
+	 },
+	 {
+		"courseCode": "PR1001",
+		"courseName": "Innovation theory and practice",
+		"courseCredits": 2
+	}
+	],
+	[
+	   {
+		  "courseCode":"NS103a",
+		  "courseName":"ODE & PDE",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"NS104",
+		  "courseName":"Electrodynamics and Optics(Phy-II)",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"HS102",
+		  "courseName":"Culture and Human Values",
+		  "courseCredits":3
+	   },
+	   {
+		  "courseCode":"ES1003",
+		  "courseName":"Innovation theory and practice",
+		  "courseCredits":2
+	   },
+	   {
+		  "courseCode":"ES1002",
+		  "courseName":"Basic Electronics",
+		  "courseCredits":4
+	   }
+	],
+	[
+	   {
+		  "courseCode":"ES2002",
+		  "courseName":"Digital Electronics and Microprocessor Interfacing",
+		  "courseCredits":4	
+	   },
+	   {
+		  "courseCode":"EC203a",
+		  "courseName":"Principle of Analog Communications",
+		  "courseCredits":2
+	   },
+	   {
+		  "courseCode":"EC203b",
+		  "courseName":"Network Theory (Analysis and Synthesis)",
+		  "courseCredits":2
+	   },
+	   {
+		  "courseCode":"EC204b",
+		  "courseName":"Instumentation and Measurement",
+		  "courseCredits":2
+	   },
+	   {
+		"courseCode":"IT2002",
+		"courseName":"Data Structure in Python",
+		"courseCredits":3
+	   },
+	   {
+		"courseCode":"IT2E01",
+		"courseName":"Matlab and Simulink, Pspice",
+		"courseCredits":2
+	  },
+	   {
+		  "courseCode":"NS205",
+		  "courseName":"Elective",
+		  "courseCredits":4
+	   }
+	],
+	[
+		{
+		   "courseCode": "EC2005",
+		   "courseName": "Digital Signal Processing",
+		   "courseCredits": 4
+		},
+		{
+		   "courseCode": "EC2006",
+		   "courseName": "Control Systems",
+		   "courseCredits": 4
+		},
+		{
+		   "courseCode": "EC207a",
+		   "courseName": "AI And Its Application",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "EC207b",
+		   "courseName": "Architecture Of Cellular Systems",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "EC2008",
+		   "courseName": "Analog Integrated Circuit",
+		   "courseCredits": 4
+		},
+		{
+		   "courseCode": "IT2E02",
+		   "courseName": "IT Workshop II",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "NS2001",
+		   "courseName": "Biology For Engineers",
+		   "courseCredits": 2
+		},
+		{
+		   "courseCode": "PC2002",
+		   "courseName": "Personality Development Course",
+		   "courseCredits": 1
+		},
+		{
+			"courseCode":"OE00_",
+			"courseName":"Elective",
+			"courseCredits":3
+		 }
+	],
+	[
+	   {
+		  "courseCode":"DS302",
+		  "courseName":"Engineering Design",
+		  "courseCredits":5
+	   },
+	   {
+		  "courseCode":"EC307",
+		  "courseName":"Fundamental of Electromagnetic Theory",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC308",
+		  "courseName":"Control Systems",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC309",
+		  "courseName":"Principle of Communication",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC310",
+		  "courseName":"Elective",
+		  "courseCredits":2
+	   },
+	   {
+		  "courseCode":"EC331",
+		  "courseName":"Control systems + Communication",
+		  "courseCredits":2
+	   }
+	],
+	[
+	   {
+		  "courseCode":"HS304",
+		  "courseName":"Environmental Science",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC312",
+		  "courseName":"Linear Integrated Circuit Design",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC313",
+		  "courseName":"Elective 1",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC314",
+		  "courseName":"Elective 2",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"HS303",
+		  "courseName":"Open Elective",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC315",
+		  "courseName":"DSP + Microwave",
+		  "courseCredits":2
+	   }
+	],
+	[
+	   {
+		  "courseCode":"ES406",
+		  "courseName":"Core Elective",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC416",
+		  "courseName":"Elective 1",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC417",
+		  "courseName":"Elective 2",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC418",
+		  "courseName":"Elective 3",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"PR499",
+		  "courseName":"Project",
+		  "courseCredits":4
+	   }
+	],
+	[
+	   {
+		  "courseCode":" ",
+		  "courseName":"Open Elective",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC419",
+		  "courseName":"Elective 1",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC420",
+		  "courseName":"Elective 2",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC421",
+		  "courseName":"Elective 3",
+		  "courseCredits":4
+	   },
+	   {
+		  "courseCode":"EC422",
+		  "courseName":"Elective 4",
+		  "courseCredits":4
+	   }
+	]
+ ]

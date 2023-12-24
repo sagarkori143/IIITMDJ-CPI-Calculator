@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import credits from "../Credits.json";
+import credits23 from "../Credits23.json";
 import "./CPI.css";
 
 
@@ -15,14 +16,16 @@ const CPI = () => {
   const getSemCredit = (sem) => {
     let branch = 0;
     if (selectedBranch === "ece") {
-      branch = 1;
+      branch = 0;
     } else if (selectedBranch === "me") {
-      branch = 2;
+      branch = 1;
     } else if (selectedBranch === "cse") {
-      branch = 3;
+      branch = 2;
     } else if (selectedBranch === "sm") {
-      branch = 4;
+      branch = 3;
     }
+    if(selectedBatch==2023){return parseInt(credits23[`sem${sem}`][branch])};
+     console.log("here are your sem credits: ",credits[`sem${sem}`][branch])
     return parseInt(credits[`sem${sem}`][branch]);
   };
 
@@ -30,7 +33,7 @@ const CPI = () => {
   useEffect(() => {
     setSpis(Array(8).fill(""));
     setResult(0);
-  }, [selectedSemester, selectedBranch]);
+  }, [selectedSemester, selectedBranch, selectedBatch]);
 
   // Helper function to determine captions based on CPI
   const Comments = () => {
@@ -69,7 +72,6 @@ const CPI = () => {
 
     console.log("total credits", totalCredits);
     console.log("obtained credits", obtainedCredits);
-
     const cpi = obtainedCredits / totalCredits;
     setResult(parseFloat(cpi.toFixed(2)));
 

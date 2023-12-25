@@ -84,10 +84,15 @@
 		"courseCredits":3
 	   },
 	   {
+		"courseCode":"EC204a",
+		"courseName":"Electronic devices and Circuits",
+		"courseCredits":2
+	   },
+	   {
 		"courseCode":"IT2E01",
 		"courseName":"Matlab and Simulink, Pspice",
 		"courseCredits":2
-	  },
+	   },
 	   {
 		  "courseCode":"NS205",
 		  "courseName":"Elective",

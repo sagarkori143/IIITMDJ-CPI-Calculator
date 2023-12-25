@@ -60,63 +60,79 @@
 	],
 	[
 		{
-			"courseCode": "ES204",
-			"courseName": "Digital ELectronics",
+			"courseCode": "CS2002",
+			"courseName": "COA",
+			"courseCredits": 3
+		},
+		{
+			"courseCode": "IT2001",
+			"courseName": "Data Structure in C",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "MN201",
-			"courseName": "Manufacturing Process",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "CS201",
+			"courseCode": "CS2003",
 			"courseName": "DBMS",
-			"courseCredits": 5
+			"courseCredits": 4
 		},
 		{
-			"courseCode": "CS202",
-			"courseName": "OOP's with Java",
+			"courseCode": "CS2004",
+			"courseName": "Data Science",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "IT2C01",
+			"courseName": "OOPS in Java",
 			"courseCredits": 2
 		},
 		{
-			"courseCode": "NS205",
+			"courseCode": "NS2001",
+			"courseName": "Biology for Engineers",
+			"courseCredits": 2
+		},
+		{
+			"courseCode": "OE200",
 			"courseName": "Elective",
-			"courseCredits": 4
+			"courseCredits": 3
 		}
 	],
 	[
 		{
-			"courseCode": "ES205",
-			"courseName": "Fundamentals of Robotics",
+			"courseCode": "CS2007",
+			"courseName": "Design & Analysis Of Algorithm",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "MS201",
-			"courseName": "Management Concepts and Technology",
+			"courseCode": "CS2008",
+			"courseName": "Computer Network",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "CS203",
-			"courseName": "Computer Organization and Architecture",
+			"courseCode": "CS2009",
+			"courseName": "IOT And Embedded Systems",
 			"courseCredits": 4
 		},
 		{
-			"courseCode": "CS204",
-			"courseName": "Design and Analysis of Algorithms",
-			"courseCredits": 4
-		},
-		{
-			"courseCode": "CS205",
-			"courseName": "Data Communication",
+			"courseCode": "IT2C02",
+			"courseName": "IT Workshop II",
 			"courseCredits": 2
-        },
-        {
-            "courseCode": "CS206",
-            "courseName": "Lab Based Project 1",
-            "courseCredits": 2
-        }
-	],
+		},
+		{
+			"courseCode": "PC2002",
+			"courseName": "Personality Development Course",
+			"courseCredits": 1
+		},
+		{
+			"courseCode": "CS2006",
+			"courseName": "Operating Systems",
+			"courseCredits": 4
+		},
+		{
+			"courseCode": "OE200",
+			"courseName": "Elective",
+			"courseCredits": 3
+		}
+	]
+	,
 	[
 		{
 			"courseCode": "DS302",

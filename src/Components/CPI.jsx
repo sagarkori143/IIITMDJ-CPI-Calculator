@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import credits from "../Credits.json";
 import credits23 from "../Credits23.json";
+import credits22 from "../Credits22.json";
 import "./CPI.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +28,7 @@ const CPI = () => {
       branch = 3;
     }
     if(selectedBatch==2023){return parseInt(credits23[`sem${sem}`][branch])};
+    if(selectedBatch==2022){return parseInt(credits22[`sem${sem}`][branch])};
      console.log("here are your sem credits: ",credits[`sem${sem}`][branch])
     return parseInt(credits[`sem${sem}`][branch]);
   };
@@ -40,11 +42,11 @@ const CPI = () => {
 /// For toast notifications
   const toastHandler= ()=>{
     if(result>10){return toast.warn("Hey prabhu. Hey Hariram Krishn Jagannatham Premanand. Ye kya hua 🫠")}
-    if(result>9){return toast.success("Nice to meet you Topper ✨") }
-    if(result>8){return toast.success("Bahut badhiya. Placement cutoff passed 😁") }
-    if(result>7){return toast.info("It's OK. But try to push more 💪") }
+    if(result>=9){return toast.success("Nice to meet you Topper ✨") }
+    if(result>=8){return toast.success("Bahut badhiya. Placement cutoff passed 😁") }
+    if(result>=7){return toast.info("It's OK. But try to push more 💪") }
     if(result>=6){return toast.warn("Oo paaji kade padh vi liya kro .") }
-    if(result>0 && result<6){return toast.error("Bruhh 😢😢 Feeling sad for you.") }
+    if(result>0 && result<6){return toast.error("Bruhh 😢 Feeling sad for you.") }
     
   }
   useEffect(() => {

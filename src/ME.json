@@ -59,7 +59,7 @@
 	 ], 
 	 [
 		{
-			"courseCode": "Manufacturing Process",
+			"courseCode": "ME2002",
 			"courseName": "Manufacturing Process",
 			"courseCredits": 4
 		},
@@ -84,7 +84,7 @@
 			"courseCredits": 2
 		},
 		{
-			"courseCode": "Elective",
+			"courseCode": "OE200",
 			"courseName": "Elective",
 			"courseCredits": 3
 		}
@@ -124,6 +124,11 @@
 			"courseCode": "PC2002",
 			"courseName": "Personality Development Course",
 			"courseCredits": 1
+		},
+		{
+			"courseCode": "OE200",
+			"courseName": "Elective",
+			"courseCredits": 3
 		}
 	],
 	[

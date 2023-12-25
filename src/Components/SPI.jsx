@@ -117,24 +117,6 @@ const selectedBranchData = !(selectedBatch === 2023)
   // Total SPI value formatted for display
   const totalSPI = semTotal() === 0 ? null :semTotal();
 
-  // Helper function to determine captions based on SPI
-  const Comments = () => {
-    if (totalSPI <= 10 && totalSPI > 8.5) {
-      return "Waah beta! Moj kardi";
-    } else if (totalSPI <= 8.5 && totalSPI > 7.8) {
-      return " Ye hui na baat!";
-    } else if (totalSPI <= 7.8 && totalSPI > 7) {
-      return " Doing great! Keep going buddy 🏃‍♂️  ";
-    } else if (totalSPI <= 7 && totalSPI > 6) {
-      return "Aise to kaam nahi chalega dost 😐";
-    } else if (totalSPI <= 6) {
-      return "Padh lo thoda bro 😐";
-    } else {
-      return "Hey prabhu. Hey Hariram Krishna Jagannatham. Ye kya hua 🫠 ";
-    }
-  };
-
-
   // JSX structure
   return (
     <div className="Containery">

@@ -37,22 +37,6 @@ const CPI = () => {
     setResult(0);
   }, [selectedSemester, selectedBranch, selectedBatch]);
 
-  // Helper function to determine captions based on CPI
-  const Comments = () => {
-    if (result <= 10 && result > 8.5) {
-      return "Waah beta! Moj kardi";
-    } else if (result <= 8.5 && result > 7.8) {
-      return " Ye hui na baat!";
-    } else if (result <= 7.8 && result > 7) {
-      return " Doing great! Keep going buddy 🏃‍♂️  ";
-    } else if (result <= 7 && result > 6) {
-      return "Aise to kaam nahi chalega dost 😐";
-    } else if (result <= 6) {
-      return "Padh lo thoda bro 😐";
-    } else {
-      return "Hey prabhu. Hey Hariram Krishn Jagannatham. Ye kya hua 🫠 ";
-    }
-  };
 /// For toast notifications
   const toastHandler= ()=>{
     if(result>10){return toast.warn("Hey prabhu. Hey Hariram Krishn Jagannatham Premanand. Ye kya hua 🫠")}

@@ -5,6 +5,7 @@ import "./Calculator.css";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
 import StatCounter from "../Components/StatsCounter";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -13,6 +14,7 @@ export const Calculator = () => {
   const navigate=useNavigate();
   return (
     <div className="mainContainer">
+      <ToastContainer/>
       <div className="Topper">
         <div className="Backbutton">
    

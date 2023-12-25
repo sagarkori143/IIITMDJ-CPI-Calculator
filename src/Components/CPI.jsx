@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import credits from "../Credits.json";
 import credits23 from "../Credits23.json";
 import "./CPI.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const CPI = () => {
@@ -35,24 +37,21 @@ const CPI = () => {
     setResult(0);
   }, [selectedSemester, selectedBranch, selectedBatch]);
 
-  // Helper function to determine captions based on CPI
-  const Comments = () => {
-    if (result <= 10 && result > 8.5) {
-      return "Waah beta! Moj kardi";
-    } else if (result <= 8.5 && result > 7.8) {
-      return " Ye hui na baat!";
-    } else if (result <= 7.8 && result > 7) {
-      return " Doing great! Keep going buddy 🏃‍♂️  ";
-    } else if (result <= 7 && result > 6) {
-      return "Aise to kaam nahi chalega dost 😐";
-    } else if (result <= 6) {
-      return "Padh lo thoda bro 😐";
-    } else {
-      return "Hey prabhu. Hey Hariram Krishn Jagannatham. Ye kya hua 🫠 ";
-    }
-  };
+/// For toast notifications
+  const toastHandler= ()=>{
+    if(result>10){return toast.warn("Hey prabhu. Hey Hariram Krishn Jagannatham Premanand. Ye kya hua 🫠")}
+    if(result>9){return toast.success("Nice to meet you Topper ✨") }
+    if(result>8){return toast.success("Bahut badhiya. Placement cutoff passed 😁") }
+    if(result>7){return toast.info("It's OK. But try to push more 💪") }
+    if(result>=6){return toast.warn("Oo paaji kade padh vi liya kro .") }
+    if(result>0 && result<6){return toast.error("Bruhh 😢😢 Feeling sad for you.") }
+    
+  }
+  useEffect(() => {
 
-  // Helper function to format CPI for display
+    if(result!=0){toastHandler();}
+  }, [result]);
+
 
   // Helper function to calculate obtained CPI
   const obtainedCPI = () => {
@@ -78,8 +77,6 @@ const CPI = () => {
     return;
   };
 
-  // Helper function to generat text for each semester.
-  const textfield = (i) => `SPI of Semester ${i}`;
 
   // JSX structure
   return (
@@ -204,7 +201,7 @@ const CPI = () => {
         ))}
       </div>
       <div>
-        <button class="Calculatorr" data-text="Awesome" onClick={obtainedCPI}>
+        <button class="Calculatorr" data-text="Awesome" onClick={ obtainedCPI}>
           <span class="actual-text">&nbsp;Calculate&nbsp;</span>
           <span aria-hidden="true" class="hover-text">
             &nbsp;Calculate&nbsp;
@@ -213,7 +210,6 @@ const CPI = () => {
       </div>
       <div className="ResultSection">
         <h1>{result > 0 ? result : ""}</h1>
-        <p>{result > 10 ? "Looks like you entered some wrong values" : ""}</p>
       </div>
     </div>
   );

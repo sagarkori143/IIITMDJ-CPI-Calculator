@@ -1,13 +1,13 @@
-# Firstly clone the code to your local
+### Firstly clone the code to your local
 
 ### `git clone your_forked_repo_ssh_code`
 
-# Chage directory to Calculator
+### Chage directory to Calculator
 cd ./Calculator
 
-# Intall NPM dependencies
+### Intall NPM dependencies
 
-install npm
+```npm install```
 
 ### `npm start`
 
@@ -19,4 +19,4 @@ The page will reload when you make changes.\
 
 
 
-Created with ❤️ by Sagar Kori..!
+## Created with ❤️ by Sagar Kori..!

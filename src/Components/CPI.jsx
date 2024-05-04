@@ -33,11 +33,11 @@ const CPI = () => {
     return parseInt(credits[`sem${sem}`][branch]);
   };
 
-  // Reset spis when selectedSemester changes
+
   useEffect(() => {
     setSpis(Array(8).fill(""));
     setResult(0);
-  }, [selectedSemester, selectedBranch, selectedBatch]);
+  }, [ selectedBranch, selectedBatch]);
 
 /// For toast notifications
   const toastHandler= ()=>{

@@ -136,11 +136,6 @@
 		   "courseCredits": 2
 		},
 		{
-		   "courseCode": "PC2002",
-		   "courseName": "Personality Development Course",
-		   "courseCredits": 1
-		},
-		{
 			"courseCode":"OE00_",
 			"courseName":"Elective",
 			"courseCredits":3
@@ -176,7 +171,12 @@
 		  "courseCode":"EC331",
 		  "courseName":"Control systems + Communication",
 		  "courseCredits":2
-	   }
+	   },
+	   {
+		"courseCode": "PC2002",
+		"courseName": "Personality Development Course",
+		"courseCredits": 1
+	 }
 	],
 	[
 	   {

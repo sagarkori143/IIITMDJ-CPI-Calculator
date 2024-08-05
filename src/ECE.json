@@ -143,40 +143,36 @@
 	],
 	[
 	   {
-		  "courseCode":"DS302",
+		  "courseCode":"DS3001",
 		  "courseName":"Engineering Design",
-		  "courseCredits":5
+		  "courseCredits":4
 	   },
 	   {
-		  "courseCode":"EC307",
+		  "courseCode":"EC3010",
 		  "courseName":"Fundamental of Electromagnetic Theory",
-		  "courseCredits":4
+		  "courseCredits":3
 	   },
 	   {
-		  "courseCode":"EC308",
-		  "courseName":"Control Systems",
-		  "courseCredits":4
+		  "courseCode":"EC3009",
+		  "courseName":"VLSI system design",
+		  "courseCredits":3
 	   },
 	   {
-		  "courseCode":"EC309",
-		  "courseName":"Principle of Communication",
-		  "courseCredits":4
+		  "courseCode":"EC3011",
+		  "courseName":"Digital Communication",
+		  "courseCredits":3
 	   },
 	   {
 		  "courseCode":"EC310",
 		  "courseName":"Elective",
-		  "courseCredits":2
+		  "courseCredits":3
 	   },
 	   {
-		  "courseCode":"EC331",
-		  "courseName":"Control systems + Communication",
+		  "courseCode":"IT3E01",
+		  "courseName":"IT Workshop",
 		  "courseCredits":2
-	   },
-	   {
-		"courseCode": "PC2002",
-		"courseName": "Personality Development Course",
-		"courseCredits": 1
-	 }
+	   }
+	  
 	],
 	[
 	   {

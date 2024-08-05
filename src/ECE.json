@@ -163,15 +163,16 @@
 		  "courseCredits":3
 	   },
 	   {
+		"courseCode":"IT3E01",
+		"courseName":"IT Workshop",
+		"courseCredits":2
+	 },
+	   {
 		  "courseCode":"EC310",
 		  "courseName":"Elective",
 		  "courseCredits":3
-	   },
-	   {
-		  "courseCode":"IT3E01",
-		  "courseName":"IT Workshop",
-		  "courseCredits":2
 	   }
+	   
 	  
 	],
 	[

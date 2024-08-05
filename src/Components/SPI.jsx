@@ -43,9 +43,9 @@ const SPI = () => {
       case "F":
         return 0;
       case "SS":
-        return 0;
+        return -1;
       default:
-        return 0;
+        return -1;
     }
 };
 
@@ -102,7 +102,7 @@ const selectedBranchData = !(selectedBatch === 2023)
         tCredits = computeCourseCredits();
         courseGrades.forEach((el, index) => {
           const grade = getScore(el);
-          if (grade !== 0) {
+          if (grade !== -1 || grade!==null) {
             totalCredits += tCredits[index];
           }
           score += grade * tCredits[index];
@@ -115,7 +115,7 @@ const selectedBranchData = !(selectedBatch === 2023)
   };
 
   // Total SPI value formatted for display
-  const totalSPI = semTotal() === 0 ? null :semTotal();
+  const totalSPI = semTotal() === -1 ? null :semTotal();
 
   // JSX structure
   return (
@@ -243,7 +243,7 @@ const selectedBranchData = !(selectedBatch === 2023)
           {/* Result section */}
           <div className="spiResult">
             <h1>Result : </h1>
-            <h1>{totalSPI}</h1>
+            <h1>{totalSPI<0?0:totalSPI}</h1>
 
           </div>
         </div>

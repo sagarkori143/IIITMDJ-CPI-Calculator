@@ -144,7 +144,7 @@
 	[
 	   {
 		  "courseCode":"DS3001",
-		  "courseName":"Engineering Design",
+		  "courseName":"EDP Design and planning",
 		  "courseCredits":4
 	   },
 	   {
@@ -171,9 +171,7 @@
 		  "courseCode":"EC310",
 		  "courseName":"Elective",
 		  "courseCredits":3
-	   }
-	   
-	  
+	   }  
 	],
 	[
 	   {

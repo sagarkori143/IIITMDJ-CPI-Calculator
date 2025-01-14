@@ -1,25 +1,10 @@
 import React, { useEffect } from 'react';
 
 const StatCounter = () => {
-  useEffect(() => {
-    const scInvisible = 0;
-    
-
-    return () => {
-      // Cleanup script when the component is unmounted
-      
-    };
-  }, []);
 
   return (
         <div className="statcounter">
-          <a>
-            <img
-              className="statcounter"
-              src={`https://c.statcounter.com/12952087/0/ea6f9214/0/`}
-              alt="Visitors-counter"
-            />
-          </a>
+          <a href="https://www.freecounterstat.com" title="free counters for websites"><img src="https://counter6.optistats.ovh/private/freecounterstat.php?c=dql9dskxjke3s7hpmkph8qrklcnpqcfj" border="0" title="free counters for websites" alt="free counters for websites"/></a>
         </div>
   );
 };

@@ -13,7 +13,7 @@ const CPI = () => {
   const [selectedBranch, setSelectedBranch] = useState("ece");
   const [spis, setSpis] = useState(Array(8).fill(""));
   const [result, setResult] = useState(0);
-  const [selectedBatch,setSelectedBatch]=useState(2022);
+  const [selectedBatch, setSelectedBatch] = useState(2022);
 
   // Helper function to get credits for a particular semester based on your branch
   const getSemCredit = (sem) => {
@@ -27,9 +27,9 @@ const CPI = () => {
     } else if (selectedBranch === "sm") {
       branch = 3;
     }
-    if(selectedBatch==2023){return parseInt(credits23[`sem${sem}`][branch])};
-    if(selectedBatch==2022){return parseInt(credits22[`sem${sem}`][branch])};
-     console.log("here are your sem credits: ",credits[`sem${sem}`][branch])
+    if (selectedBatch == 2023) { return parseInt(credits23[`sem${sem}`][branch]) };
+    if (selectedBatch == 2022) { return parseInt(credits22[`sem${sem}`][branch]) };
+    console.log("here are your sem credits: ", credits[`sem${sem}`][branch])
     return parseInt(credits[`sem${sem}`][branch]);
   };
 
@@ -37,21 +37,21 @@ const CPI = () => {
   useEffect(() => {
     setSpis(Array(8).fill(""));
     setResult(0);
-  }, [ selectedBranch, selectedBatch]);
+  }, [selectedBranch, selectedBatch]);
 
-/// For toast notifications
-  const toastHandler= ()=>{
-    if(result>10){return toast.warn("Hey prabhu. Hey Hariram Krishn Jagannatham Premanand. Ye kya hua 🫠")}
-    if(result>=9){return toast.success("Nice to meet you Topper ✨") }
-    if(result>=8){return toast.success("Bahut badhiya. Placement cutoff passed 😁") }
-    if(result>=7){return toast.info("It's OK. But try to push more 💪") }
-    if(result>=6){return toast.warn("Oo paaji kade padh vi liya kro .") }
-    if(result>0 && result<6){return toast.error("Bruhh 😢 Feeling sad for you.") }
-    
+  /// For toast notifications
+  const toastHandler = () => {
+    if (result > 10) { return toast.warn("Hey prabhu. Hey Hariram Krishn Jagannatham Premanand. Ye kya hua 🫠") }
+    if (result >= 9) { return toast.success("Nice to meet you Topper ✨") }
+    if (result >= 8) { return toast.success("Bahut badhiya. Placement cutoff passed 😁") }
+    if (result >= 7) { return toast.info("It's OK. But try to push more 💪") }
+    if (result >= 6) { return toast.warn("Oo paaji kade padh vi liya kro .") }
+    if (result > 0 && result < 6) { return toast.error("Bruhh 😢 Feeling sad for you.") }
+
   }
   useEffect(() => {
 
-    if(result!=0){toastHandler();}
+    if (result != 0) { toastHandler(); }
   }, [result]);
 
 
@@ -153,57 +153,58 @@ const CPI = () => {
           </div>
 
           <div className="Batch">
-              <label>Batch ✌️</label>
-              <select
-                value={selectedBatch}
-                onChange={(e) => setSelectedBatch(Number(e.target.value))}
-                className="BatchDropDown"
-              >
-                <option className="BatchOptions">
-                    2020
-                </option>
-                <option className="BatchOptions">
-                    2021
-                </option>
-                <option className="BatchOptions">
-                    2022
-                </option>
-                <option className="BatchOptions">
-                    2023
-                </option>
+            <label>Batch ✌️</label>
+            <select
+              value={selectedBatch}
+              onChange={(e) => setSelectedBatch(Number(e.target.value))}
+              className="BatchDropDown"
+            >
+              <option className="BatchOptions">
+                2020
+              </option>
+              <option className="BatchOptions">
+                2021
+              </option>
+              <option className="BatchOptions">
+                2022
+              </option>
+              <option className="BatchOptions">
+                2023
+              </option>
 
-              </select>
-            </div>
+            </select>
+          </div>
         </div>
       </div>
       {/* Input for each semester */}
       <div className="semlist">
         {[...Array(selectedSemester)].map((_, i) => (
-          <div key={i + 1} className="semlist-items">
+          <div key={i + 1} className=" w-[90%] flex justify-between border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[15px] p-[10px]">
             <p>{`• Semester ${i + 1}`}</p>
 
-            <div class="containerInput">
-              <input
-                placeholder="SPI Obtained"
-                type="text"
-                value={spis[i]}
-                onChange={(e) =>
-                  setSpis([
-                    ...spis.slice(0, i),
-                    e.target.value,
-                    ...spis.slice(i + 1),
-                  ])
-                }
-                max="10"
-                min="0"
-                required
-              />
-            </div>
+
+            <input
+              placeholder="SPI Obtained"
+              type="text"
+              value={spis[i]}
+              onChange={(e) =>
+                setSpis([
+                  ...spis.slice(0, i),
+                  e.target.value,
+                  ...spis.slice(i + 1),
+                ])
+              }
+              max="10"
+              min="0"
+              required
+              className="bg-transparent w-[40%] border-none "
+            />
+
           </div>
         ))}
       </div>
       <div>
-        <button class="Calculatorr" data-text="Awesome" onClick={ obtainedCPI}>
+        <button class="Calculatorr" data-text="Awesome" onClick={obtainedCPI}>
           <span class="actual-text">&nbsp;Calculate&nbsp;</span>
           <span aria-hidden="true" class="hover-text">
             &nbsp;Calculate&nbsp;

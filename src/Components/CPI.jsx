@@ -29,7 +29,6 @@ const CPI = () => {
     }
     if (selectedBatch == 2023) { return parseInt(credits23[`sem${sem}`][branch]) };
     if (selectedBatch == 2022) { return parseInt(credits22[`sem${sem}`][branch]) };
-    console.log("here are your sem credits: ", credits[`sem${sem}`][branch])
     return parseInt(credits[`sem${sem}`][branch]);
   };
 
@@ -59,20 +58,16 @@ const CPI = () => {
   const obtainedCPI = () => {
     let totalCredits = 0;
     let obtainedCredits = 0;
-    console.log("spis entered:", spis);
     spis.forEach((value, index) => {
       const numericValue = parseFloat(value);
       // Check if the value is a number
       if (!isNaN(numericValue)) {
         totalCredits += getSemCredit(index + 1);
-        console.log("total credits single", totalCredits);
 
         obtainedCredits += getSemCredit(index + 1) * numericValue;
       }
     });
 
-    console.log("total credits", totalCredits);
-    console.log("obtained credits", obtainedCredits);
     const cpi = obtainedCredits / totalCredits;
     setResult(parseFloat(cpi.toFixed(2)));
 
@@ -197,7 +192,7 @@ const CPI = () => {
               max="10"
               min="0"
               required
-              className="bg-transparent w-[40%] border-none "
+              className="bg-transparent w-[40%] border-none rounded-md "
             />
 
           </div>

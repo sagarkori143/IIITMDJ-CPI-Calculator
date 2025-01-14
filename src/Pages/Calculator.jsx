@@ -13,7 +13,7 @@ export const Calculator = () => {
   const [target, setTarget] = useState(0);
   const navigate=useNavigate();
   return (
-    <div className="mainContainer">
+    <div className="h-fit w-full m-0 overflow-x-hidden bg-[rgb(14,13,13)] text-aliceblue flex flex-col gap-[10px] justify-center items-center text-white">
       <ToastContainer/>
       <div className="Topper">
         <div className="Backbutton">
@@ -37,7 +37,7 @@ export const Calculator = () => {
 
         </div>
         <div className="Navbarx">
-          <h2 className="spi">SPI</h2>
+          <h2 className="font-bold text-[#a63232]">SPI</h2>
          {/* Switch button */}
          <div>
          <label class="switch-button" for="switch">
@@ -51,7 +51,7 @@ export const Calculator = () => {
         </label>
 
          </div>
-        <h2 className="cpi">CPI</h2>
+        <h2 className="font-bold text-[#45a42ee7]">CPI</h2>
 
         </div>
         <div className="Socials">

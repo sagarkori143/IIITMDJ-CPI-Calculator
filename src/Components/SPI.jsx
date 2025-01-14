@@ -78,7 +78,6 @@ const SPI = () => {
   // Helper function to compute course credits for the selected semester
   const computeCourseCredits = () => {
     if (!course) {
-      console.log("Problem in computeCourseCredits.", loading);
       return [];
     }
     const credits = [];
@@ -90,7 +89,6 @@ const SPI = () => {
 
   // Helper function to calculate the total SPI
   const semTotal = () => {
-    console.log("Calculating semTotal..")
     let score = 0;
     let tCredits = 0;
     let totalCredits = 0;
@@ -106,7 +104,6 @@ const SPI = () => {
 
     });
     estimated = score / totalCredits;
-    console.log("semTotal Calculated", estimated);
     if (isNaN(estimated)) { return 0 };
     return parseFloat(estimated.toFixed(1));
   };
@@ -116,20 +113,16 @@ const SPI = () => {
 
   // JSX structure
   return (
-    <div className="border-4 border-[rgb(184,199,216)] rounded-[15px] w-[550px] p-[15px] m-[15px] flex flex-col justify-center items-center">
+    <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] w-[90%] lg:w-[550px] p-[15px] m-[15px] flex flex-col justify-center items-center">
       {loading ? (
         <div>
           <h1>Loading...</h1>
         </div>
       ) : (
-        <div>
-
-          <div className="nav">
-            <div className="flex flex-row gap-[10px] m-[5px] justify-center items-center
-">
+        <div className="w-[90%] flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center">
+            <div className="w-[80%] flex flex-row gap-2">
               <label>Branch 💫</label>
-
-
               <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
                 <strong>ECE</strong>
                 <div id="container-stars">
@@ -167,8 +160,7 @@ const SPI = () => {
               </button>
             </div>
             <div className="SemesterAndBatches">
-              <div className="flex justify-center items-center m-[5px]
-">
+              <div className="flex justify-center items-center m-[5px]">
                 <label>Semester ✍️</label>
                 <select
                   value={selectedSemester}
@@ -214,11 +206,11 @@ const SPI = () => {
           </div>
           {/* Table for entering course grades */}
 
-          <table className="flex flex-col p-[10px] min-w-[400px]">
+          <table className="flex flex-col p-[10px] w-[100%] lg:w-[400px]">
             {course[selectedSemester].map((course, index) => (
               <tr key={course.id} className="border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[10px] mb-[5px] p-[4px] pr-[7px]">
-                <td className="name">{`• ${course.courseCode} ${course.courseName}`}</td>
-                <td className="float-right">
+                <td className="font-semibold">{`• ${course.courseCode} ${course.courseName}`}</td>
+                <td className="flex">
 
                   <div >
                     <input
@@ -230,7 +222,7 @@ const SPI = () => {
                         updatedGrades[index] = e.target.value;
                         setCourseGrades(updatedGrades);
                       }}
-                      className="bg-transparent h-[30px] border-none"
+                      className="bg-transparent h-[30px] border-none ml-1 rounded-md text-blue-500 font-semibold"
 
                     />
                   </div>
@@ -240,12 +232,15 @@ const SPI = () => {
             ))}
           </table>
 
-          {/* Result section */}
-          <div className="flex items-center justify-center gap-[15px]">
-            <h1>Result : </h1>
-            <h1>{totalSPI}</h1>
-
-          </div>
+          {
+            totalSPI > 0 ?
+              <div className="flex items-center justify-center gap-[15px]">
+                <h1 className="text-[20px]">Result : </h1>
+                <h1 className="text-[20px] font-semibold">{totalSPI}</h1>
+              </div>
+              :
+              ""
+          }
         </div>
       )}
     </div>

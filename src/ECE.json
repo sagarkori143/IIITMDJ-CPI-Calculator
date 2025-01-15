@@ -176,34 +176,38 @@
 	[
 	   {
 		  "courseCode":"HS304",
-		  "courseName":"Environmental Science",
-		  "courseCredits":4
-	   },
-	   {
-		  "courseCode":"EC312",
-		  "courseName":"Linear Integrated Circuit Design",
-		  "courseCredits":4
+		  "courseName":"Ecology and Environmental Science",
+		  "courseCredits":2
 	   },
 	   {
 		  "courseCode":"EC313",
 		  "courseName":"Elective 1",
-		  "courseCredits":4
+		  "courseCredits":3
 	   },
 	   {
 		  "courseCode":"EC314",
 		  "courseName":"Elective 2",
-		  "courseCredits":4
+		  "courseCredits":3
 	   },
 	   {
-		  "courseCode":"HS303",
-		  "courseName":"Open Elective",
-		  "courseCredits":4
+		"courseCode":"EC314",
+		"courseName":"Elective 3",
+		"courseCredits":3
 	   },
 	   {
 		  "courseCode":"EC315",
-		  "courseName":"DSP + Microwave",
-		  "courseCredits":2
-	   }
+		  "courseName":"Fabrication Project",
+		  "courseCredits":4
+	   },
+	   {
+		"courseCode":"PC3003",
+		"courseName":"PDC",
+		"courseCredits":1
+	 },{
+		"courseCode":"IT3E03",
+		"courseName":"IT Workshop",
+		"courseCredits":2
+	 }
 	],
 	[
 	   {

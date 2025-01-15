@@ -77,12 +77,11 @@ const CPI = () => {
 
   // JSX structure
   return (
-    <div className="Containerx">
+    <div className="lg:text-[16px] md:text-[15px] text-[14px]  overflow-hidden border-[4px] border-solid border-[rgb(84,110,140)] rounded-[15px] lg:w-[100%] w-[78%] flex flex-col gap-[20px] justify-center items-center p-4 m-[15px]">
       {/* Branch and Semester selection */}
-      <div className="nav">
-        <div className="branches">
-          <label>Branch 💫</label>
-
+      <div className="flex flex-col gap-3 items-center">
+        <div className="flex gap-2 w-[100%] items-center justify-center">
+          <label>Branch</label>
           <button
             onClick={() => setSelectedBranch("ece")}
             className={selectedBranch === "ece" ? "active" : "btnn"}
@@ -131,8 +130,8 @@ const CPI = () => {
             </div>
           </button>
         </div>
-        <div className="SemesterAndBatches">
-          <div className="semester">
+        <div className="flex">
+          <div className="flex justify-center items-center">
             <label>Semester </label>
             <select
               value={selectedSemester}
@@ -174,7 +173,7 @@ const CPI = () => {
       {/* Input for each semester */}
       <div className="semlist">
         {[...Array(selectedSemester)].map((_, i) => (
-          <div key={i + 1} className=" w-[90%] flex justify-between border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[15px] p-[10px]">
+          <div key={i + 1} className=" w-[100%] flex justify-between border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[15px] p-[10px]">
             <p>{`• Semester ${i + 1}`}</p>
 
 

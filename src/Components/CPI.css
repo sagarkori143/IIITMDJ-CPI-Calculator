@@ -1,16 +1,4 @@
-.Containerx{
-    border: solid rgb(84, 110, 140) 4px;
-    border-radius: 15px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    margin: 15px;
-    
-}
+
 .nav{
     display: flex;
     flex-direction: column;
@@ -211,9 +199,8 @@ strong {
 }
 
 .semlist{
-    display: grid;
     display: flex;
-    width: 90%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     padding: 15px;

@@ -210,7 +210,7 @@ const SPI = () => {
           <table className="flex flex-col p-[10px] w-[100%] lg:w-[400px]">
             {course[selectedSemester].map((course, index) => (
               <tr key={course.id} className="border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[10px] mb-[5px] p-[4px] pr-[7px]">
-                <td className="flex gap-1 font-semibold"><button className="hover:scale-[110%]"><img className="lg:mt-[3px] h-[17px] lg:h-[20px]" src={deleteLogo}></img></button>{`${course.courseCode} ${course.courseName} (${course.courseCredits}) `}</td>
+                <td className="flex gap-1 font-semibold">• {`${course.courseCode} ${course.courseName} (${course.courseCredits}) `}</td>
                 <td className="flex">
 
                   <div >

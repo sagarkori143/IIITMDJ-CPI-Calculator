@@ -5,7 +5,9 @@ import "./Calculator.css";
 import { useNavigate } from "react-router-dom";
 import StatCounter from "../Components/StatsCounter";
 import { ToastContainer } from "react-toastify";
-
+import gmail from "./../assets/gmail.png"
+import linkedIn from "./../assets/linkedin.png"
+import insta from "./../assets/instagram.png"
 
 
 export const Calculator = () => {
@@ -83,59 +85,28 @@ export const Calculator = () => {
             )
         }
       </div>
-      <div className="Footer">
-        <div className="Contact">
-          <h2>Contact : </h2>
+      <div className="w-[90%] h-[40px] flex justify-between">
+        <div className="flex items-center gap-2 overflow-hidden w-[21%] lg:w-[5.5%] hover:w-[70%] hover:lg:w-[15%] p-2 rounded-[10px] cursor-pointer bg-blue-600 transition-all duration-300 ease-in-out">
+          <span className="font-semibold">Contact</span>
+          <div className="flex items-center gap-2">
+            <a href="https://in.linkedin.com/in/sagar-kori-02280a258" target="_blank">
+            <img className="w-[80%] hover:scale-110" src={linkedIn}></img>
+            </a>
 
-          <a href="https://in.linkedin.com/in/sagar-kori-02280a258" target="_blank">
-            <div class="linkedinlink">
-              <button class="linkedinBtn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512" style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2 }}>
-                  <path d="M512,64c0,-35.323 -28.677,-64 -64,-64l-384,0c-35.323,0 -64,28.677 -64,64l0,384c0,35.323 28.677,64 64,64l384,0c35.323,0 64,-28.677 64,-64l0,-384Z" style={{ fill: '#2867b2' }} />
-                  <rect height="257.962" width="85.76" x="61.053" y="178.667" style={{ fill: '#fff' }} />
-                  <path d="M104.512,54.28c-29.341,0 -48.512,19.29 -48.512,44.573c0,24.752 18.588,44.574 47.377,44.574l0.554,0c29.903,0 48.516,-19.822 48.516,-44.574c-0.555,-25.283 -18.611,-44.573 -47.935,-44.573Z" style={{ fill: '#fff', fillRule: 'nonzero' }} />
-                  <path d="M357.278,172.601c-45.49,0 -65.866,25.017 -77.276,42.589l0,-36.523l-85.738,0c1.137,24.197 0,257.961 0,257.961l85.737,0l0,-144.064c0,-7.711 0.554,-15.42 2.827,-20.931c6.188,-15.4 20.305,-31.352 43.993,-31.352c31.012,0 43.436,23.664 43.436,58.327l0,138.02l85.741,0l0,-147.93c0,-79.237 -42.305,-116.097 -98.72,-116.097Z" style={{ fill: '#fff', fillRule: 'nonzero' }} />
-                </svg>
-                <span class="linkedintext">LinkedIn</span>
-              </button>
-            </div>
-          </a>
+            <a href="mailto:sagarkoriup11@gmail.com" target="_blank">
+            <img className="w-[80%] hover:scale-110" src={gmail}></img>
+            </a>
 
-          <a href="mailto:sagarkoriup11@gmail.com" target="_blank">
-            <div class="emaillink">
-              <button class="emailBtn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="512px" viewBox="0 0 512 512" style={{ enableBackground: 'new 0 0 512 512' }} width="512px" xmlSpace="preserve">
-                  <rect height="358.87" style={{ fill: '#F1F5F7' }} width="357.904" x="77.045" y="76.565" />
-                  <path d="M256.002,293.738l178.947,141.697v-279.74L256.002,293.738z M256.002,293.738" style={{ fill: '#DCE6EA' }} />
-                  <path d="M449.861,76.565h-14.912L256.002,218.26L77.045,76.565H62.134c-24.693,0-44.737,20.094-44.737,44.858v269.152c0,24.759,20.044,44.859,44.737,44.859h14.911v-279.74l178.957,138.014l178.947-138.047v279.773h14.912c24.699,0,44.742-20.101,44.742-44.859V121.424C494.604,96.66,474.561,76.565,449.861,76.565L449.861,76.565z M449.861,76.565" style={{ fill: '#F84437' }} />
-                </svg>
-                <span class="emailtext">Email</span>
-              </button>
-            </div>
-          </a>
-
-          <a href="https://www.instagram.com/sagarkori143/" target="_blank">
-            <div className="instalink">
-              <button class="instaBtn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512" class="instasvgIcon"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-                <span class="instatext">Instagram</span>
-              </button>
-            </div>
-          </a>
-
-
-
-
-
+            <a href="https://www.instagram.com/sagarkori143/" target="_blank">
+            <img className="w-[80%] hover:scale-110" src={insta}></img>
+            </a>
+          </div>
         </div>
-
-        <div className="Counter">
-          <a>Visit Counter: </a>
+      </div>
+      <div className="flex gap-2 items-center justify-center mb-5">
+          <a className="mb-1 font-semibold">Visit Counter: </a>
           <StatCounter />
         </div>
-
-
-      </div>
     </div>
   );
 };

@@ -113,7 +113,7 @@ const SPI = () => {
 
   // JSX structure
   return (
-    <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] w-[90%] lg:w-[550px] p-[15px] m-[15px] flex flex-col justify-center items-center">
+    <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] w-[80%] p-[15px] m-[15px] flex flex-col justify-center items-center">
       {loading ? (
         <div>
           <h1>Loading...</h1>

@@ -173,8 +173,8 @@ const CPI = () => {
       {/* Input for each semester */}
       <div className="semlist">
         {[...Array(selectedSemester)].map((_, i) => (
-          <div key={i + 1} className=" w-[100%] flex justify-between border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[15px] p-[10px]">
-            <p>{`• Semester ${i + 1}`}</p>
+          <div key={i + 1} className=" w-[100%] flex justify-between border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[15px] p-2">
+            <p>{`🌟 Semester ${i + 1}`}</p>
 
 
             <input
@@ -191,7 +191,7 @@ const CPI = () => {
               max="10"
               min="0"
               required
-              className="bg-transparent w-[40%] border-none rounded-md "
+              className="bg-transparent w-[42%] border-none rounded-md"
             />
 
           </div>

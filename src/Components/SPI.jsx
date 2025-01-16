@@ -7,24 +7,28 @@ import CSE23 from "./../DataFiles/Courses/CSE23.json";
 import ME23 from "./../DataFiles/Courses/ME23.json";
 import green from "./../assets/green.png"
 import red from "./../assets/red.png"
+import add from "./../assets/add-list.png"
 
 const SPI = () => {
   // State variables
   const [selectedBranch, setSelectedBranch] = useState("ece");
   const [selectedSemester, setSelectedSemester] = useState(0);
   const [courseGrades, setCourseGrades] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [selectedBatch, setSelectedBatch] = useState(2022);
   const [courseCredits, setCourseCredits] = useState([]);
+  const [newCourseName, setNewCourseName] = useState("");
+  const [newCourseCredits, setNewCourseCredits] = useState("");
 
   // Data selection based on choices
   const getScore = (grade) => ({
     "O": 10, "A+": 10, "A": 9, "B+": 8, "B": 7, "C+": 6, "C": 5,
     "D+": 4, "D": 3, "F": 0, "SS": 0
   }[grade?.toUpperCase()] || 0);
+
   const branchMap = selectedBatch === 2023
     ? { cse: CSE23, ece: ECE23, me: ME23 }
     : { cse: CSE22, ece: ECE22, me: ME22 };
+
   const selectedBranchData = branchMap[selectedBranch] || null;
   const course = selectedBranchData;
 
@@ -39,9 +43,9 @@ const SPI = () => {
         earnedCredits += grade * courseCredits[index];
       }
     });
-    let result = earnedCredits / totalCredits
+    let result = earnedCredits / totalCredits;
     return parseFloat(result.toFixed(2));
-  }
+  };
   const totalSPI = calculateSPI() === 0 ? null : calculateSPI();
 
   const courseSkip = (index) => {
@@ -50,21 +54,37 @@ const SPI = () => {
     );
   };
 
+  const handleAddCourse = () => {
+    if (newCourseName && newCourseCredits > 0) {
+      setCourseCredits((prevCredits) => [...prevCredits, Number(newCourseCredits)]);
+      setCourseGrades((prevGrades) => [...prevGrades, ""]);
+      course[selectedSemester].push({
+        id: `custom-${course[selectedSemester].length}`,
+        courseCode: "Swayam:",
+        courseName: newCourseName,
+        courseCredits: Number(newCourseCredits),
+      });
+      setNewCourseName("");
+      setNewCourseCredits("");
+    } else {
+      alert("Please provide valid course details!");
+    }
+  };
+
   useEffect(() => {
     setCourseGrades([]);
     let semData = selectedBranchData[selectedSemester];
-    let creditsList = []
-    semData.forEach((el, ind) => {
-      creditsList.push(el.courseCredits)
-    })
-    setCourseCredits(creditsList)
+    let creditsList = [];
+    semData.forEach((el) => {
+      creditsList.push(el.courseCredits);
+    });
+    setCourseCredits(creditsList);
   }, [selectedSemester, selectedBranch]);
-
 
   return (
     <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] lg:w-[100%] w-[80%] p-[15px] m-[15px] flex flex-col justify-center items-center">
       <div className="w-[100%] flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center">
           <div className="w-[80%] flex flex-row gap-2">
             <label>Branch 💫</label>
             <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
@@ -149,54 +169,67 @@ const SPI = () => {
 
         </div>
         {/* Table for entering course grades */}
-
         <table className="flex flex-col p-[10px] w-[100%] lg:w-[400px]">
           {course[selectedSemester].map((course, index) => (
             <tr key={course.id} className="border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[10px] mb-[5px] p-[4px] pr-[7px]">
               <td className="flex gap-1 font-semibold">
-                {
-                  courseCredits[index] > 0 ?
-                    (
-                      <button><img onClick={() => courseSkip(index)} className="h-3 hover:scale-110" src={green}></img></button>
-                    )
-                    :
-                    (
-                      <button><img onClick={() => courseSkip(index)} className="h-3 hover:scale-110" src={red}></img></button>
-                    )
-                }
+                {courseCredits[index] > 0 ? (
+                  <button>
+                    <img onClick={() => courseSkip(index)} className="h-3 hover:scale-110" src={green} alt="Skip" />
+                  </button>
+                ) : (
+                  <button>
+                    <img onClick={() => courseSkip(index)} className="h-3 hover:scale-110" src={red} alt="Restore" />
+                  </button>
+                )}
                 {`${course.courseCode} ${course.courseName} (${course.courseCredits}) `}
               </td>
               <td className="flex">
-
-                <div >
-                  <input
-                    placeholder="Enter grades obtained"
-                    type="text"
-                    value={courseGrades[index] || ''}
-                    onChange={(e) => {
-                      const updatedGrades = [...courseGrades];
-                      updatedGrades[index] = e.target.value;
-                      setCourseGrades(updatedGrades);
-                    }}
-                    className="bg-transparent h-[30px] border-none ml-1 rounded-md text-blue-500 font-semibold"
-
-                  />
-                </div>
-
+                <input
+                  placeholder="Enter grades obtained"
+                  type="text"
+                  value={courseGrades[index] || ""}
+                  onChange={(e) => {
+                    const updatedGrades = [...courseGrades];
+                    updatedGrades[index] = e.target.value;
+                    setCourseGrades(updatedGrades);
+                  }}
+                  className="bg-transparent h-[30px] border-none ml-1 rounded-md text-blue-500 font-semibold"
+                />
               </td>
             </tr>
           ))}
+          <hr className="mt-2 border-gray-500"/>
+          <span className="flex justify-center">Add Swayam courses</span>
+          <tr className="mt-4 w-[100%] overflow-hidden">
+            <td colSpan={2} className="w-[100%] flex gap-3">
+                <input
+                  type="text"
+                  placeholder="Course Name"
+                  value={newCourseName}
+                  onChange={(e) => setNewCourseName(e.target.value)}
+                  className="p-2 border h-[30px] w-[40%] bg-transparent rounded-md"
+                />
+                <input
+                  type="number"
+                  placeholder="Course Credits"
+                  value={newCourseCredits}
+                  onChange={(e) => setNewCourseCredits(e.target.value)}
+                  className="p-2 border h-[30px] w-[40%] bg-transparent rounded-md appearance-none"
+                />
+                <button onClick={handleAddCourse} className="flex items-center h-[30px] text-white p-2 rounded">
+                  <img className="h-10 hover:scale-110" src={add}></img>
+                </button>
+            </td>
+          </tr>
         </table>
 
-        {
-          totalSPI > 0 ?
-            <div className="flex items-center justify-center gap-[15px]">
-              <h1 className="text-[20px]">Result : </h1>
-              <h1 className="text-[20px] font-semibold">{totalSPI}</h1>
-            </div>
-            :
-            ""
-        }
+        {totalSPI > 0 && (
+          <div className="flex items-center justify-center gap-[15px]">
+            <h1 className="text-[20px]">Result : </h1>
+            <h1 className="text-[20px] font-semibold">{totalSPI}</h1>
+          </div>
+        )}
       </div>
     </div>
   );

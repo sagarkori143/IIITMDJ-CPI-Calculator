@@ -82,11 +82,10 @@ const SPI = () => {
   }, [selectedSemester, selectedBranch]);
 
   return (
-    <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] lg:w-[100%] w-[80%] p-[15px] m-[15px] flex flex-col justify-center items-center">
+    <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] lg:w-[100%] w-[86%] p-[15px] m-[15px] flex flex-col justify-center items-center">
       <div className="w-[100%] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-          <div className="w-[80%] flex flex-row gap-2">
-            <label>Branch 💫</label>
+          <div className="w-[90%] flex flex-row gap-2">
             <button onClick={() => setSelectedBranch('ece')} className={selectedBranch === 'ece' ? 'active' : 'btnn'} type="button">
               <strong>ECE</strong>
               <div id="container-stars">

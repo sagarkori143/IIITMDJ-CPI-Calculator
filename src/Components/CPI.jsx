@@ -77,11 +77,10 @@ const CPI = () => {
 
   // JSX structure
   return (
-    <div className="lg:text-[16px] md:text-[15px] text-[14px]  overflow-hidden border-[4px] border-solid border-[rgb(84,110,140)] rounded-[15px] lg:w-[100%] w-[78%] flex flex-col gap-[20px] justify-center items-center p-4 m-[15px]">
+    <div className="lg:text-[16px] md:text-[15px] text-[14px]  overflow-hidden border-[4px] border-solid border-[rgb(84,110,140)] rounded-[15px] lg:w-[100%] w-[87%] flex flex-col gap-[20px] justify-center items-center p-4 m-[15px]">
       {/* Branch and Semester selection */}
       <div className="flex flex-col gap-3 items-center">
         <div className="flex gap-2 w-[100%] items-center justify-center">
-          <label>Branch</label>
           <button
             onClick={() => setSelectedBranch("ece")}
             className={selectedBranch === "ece" ? "active" : "btnn"}

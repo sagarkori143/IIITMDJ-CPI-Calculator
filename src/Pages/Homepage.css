@@ -58,6 +58,12 @@
     cursor: pointer;
     transition: all 450ms ease-in-out;
 }
+@media (max-width: 768px) { /* Adjust the max-width as needed for your small screen threshold */
+    .launchbutton .btn {
+        width: 10em; /* New width for small screens */
+        height: 3.5em; /* New height for small screens */
+    }
+}
   
 .launchbutton .sparkle {
     fill: #AAAAAA;

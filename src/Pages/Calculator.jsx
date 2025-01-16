@@ -90,15 +90,15 @@ export const Calculator = () => {
           <span className="font-semibold">Contact</span>
           <div className="flex items-center gap-2">
             <a href="https://in.linkedin.com/in/sagar-kori-02280a258" target="_blank">
-            <img className="w-[80%] hover:scale-110" src={linkedIn}></img>
+            <img className="w-[80%] hover:scale-110 " src={linkedIn}></img>
             </a>
 
             <a href="mailto:sagarkoriup11@gmail.com" target="_blank">
-            <img className="w-[80%] hover:scale-110" src={gmail}></img>
+            <img className="w-[80%] hover:scale-110 " src={gmail}></img>
             </a>
 
             <a href="https://www.instagram.com/sagarkori143/" target="_blank">
-            <img className="w-[80%] hover:scale-110" src={insta}></img>
+            <img className="w-[80%] hover:scale-110 " src={insta}></img>
             </a>
           </div>
         </div>

@@ -448,7 +448,7 @@ body {
   padding: 10px;
   width: 100%;
   height: fit-content;
-  overflow: hidden;
+  overflow-x: hidden;
 
 
 }

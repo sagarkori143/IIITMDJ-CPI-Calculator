@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import ECE22 from "../ECE.json";
-import CSE22 from "../CSE.json";
-import ME22 from "../ME.json";
-import ECE23 from "../ECE23.json";
-import CSE23 from "../CSE23.json";
-import ME23 from "../ME23.json";
-import  deleteLogo from "./../assets/delete.png"
+import ECE22 from "./../DataFiles/Courses/ECE.json"
+import CSE22 from "./../DataFiles/Courses/CSE.json";
+import ME22 from "./../DataFiles/Courses/ME.json";
+import ECE23 from "./../DataFiles/Courses/ECE23.json";
+import CSE23 from "./../DataFiles/Courses/CSE23.json";
+import ME23 from "./../DataFiles/Courses/ME23.json";
+import green from "./../assets/green.png"
+import red from "./../assets/red.png"
 
 const SPI = () => {
   // State variables
@@ -14,6 +15,7 @@ const SPI = () => {
   const [courseGrades, setCourseGrades] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedBatch, setSelectedBatch] = useState(2022);
+  const [courseCredits,setCourseCredits]=useState([]);
 
   // Helper function to get score based on grade
   const getScore = (grade) => {
@@ -48,12 +50,7 @@ const SPI = () => {
     }
   };
 
-  // Reset courseGrades and courseCredits when selectedSemester or selectedBranch changes
-  useEffect(() => {
-    setCourseGrades([]);
-  }, [selectedSemester, selectedBranch]);
 
-  // Select the course data based on the selectedBranch
 
   const selectedBranchData = !(selectedBatch === 2023)
     ? (loading ? [] : (
@@ -72,47 +69,32 @@ const SPI = () => {
             null
     ));
 
-
-  // Use selectedBranchData instead of directly using ECE
   const course = selectedBranchData;
 
-  // Helper function to compute course credits for the selected semester
-  const computeCourseCredits = () => {
-    if (!course) {
-      return [];
-    }
-    const credits = [];
-    course[selectedSemester].forEach((el) => {
-      credits.push(el.courseCredits);
-    });
-    return credits;
-  };
+  const calculateSPI =()=>{
+    let semData=selectedBranchData[selectedSemester];
+    let creditsArray=[];
+    semData.forEach((el,index)=>{
+      creditsArray.push(el.courseCredits);
+    })
 
-  // Helper function to calculate the total SPI
-  const semTotal = () => {
-    let score = 0;
-    let tCredits = 0;
-    let totalCredits = 0;
-    let estimated = 0;
-
-    tCredits = computeCourseCredits();
+    let totalCredits=0;
+    let earnedCredits=0;
     courseGrades.forEach((el, index) => {
       const grade = getScore(el);
       if (grade !== 0) {
-        totalCredits += tCredits[index];
+        totalCredits += creditsArray[index];
+        earnedCredits += grade * creditsArray[index];
       }
-      score += grade * tCredits[index];
-
     });
-    estimated = score / totalCredits;
-    if (isNaN(estimated)) { return 0 };
-    return parseFloat(estimated.toFixed(1));
-  };
+    let result=earnedCredits/totalCredits
+    return parseFloat(result.toFixed(2));
+  }
+  const totalSPI = calculateSPI() === 0 ? null : calculateSPI();
 
-  // Total SPI value formatted for display
-  const totalSPI = semTotal() === 0 ? null : semTotal();
-
-  // JSX structure
+  useEffect(() => {
+    setCourseGrades([]);
+  }, [selectedSemester, selectedBranch]);
   return (
     <div className="lg:text-[16px] md:text-[15px] text-[14px] border-4 border-[rgb(184,199,216)] rounded-[15px] lg:w-[100%] w-[80%] p-[15px] m-[15px] flex flex-col justify-center items-center">
       {loading ? (
@@ -210,7 +192,19 @@ const SPI = () => {
           <table className="flex flex-col p-[10px] w-[100%] lg:w-[400px]">
             {course[selectedSemester].map((course, index) => (
               <tr key={course.id} className="border-[2.3px] border-solid border-[rgb(87,89,138)] rounded-[10px] mb-[5px] p-[4px] pr-[7px]">
-                <td className="flex gap-1 font-semibold">• {`${course.courseCode} ${course.courseName} (${course.courseCredits}) `}</td>
+                <td className="flex gap-1 font-semibold">
+                  {
+                    course.courseCredits>0?
+                    (
+                      <button><img onClick={()=>{course.courseCredits=-course.courseCredits}} className="h-3 hover:scale-110" src={green}></img></button>
+                    )
+                    :
+                    (
+                      <button><img onClick={()=>{course.courseCredits=-course.courseCredits}} className="h-3 hover:scale-110" src={red}></img></button>
+                    )
+                  }
+                  {`${course.courseCode} ${course.courseName} (${course.courseCredits}) `}
+                </td>
                 <td className="flex">
 
                   <div >

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import credits from "../Credits.json";
-import credits23 from "../Credits23.json";
-import credits22 from "../Credits22.json";
+import credits from "./../DataFiles/Credits/Credits.json";
+import credits23 from "./../DataFiles/Credits/Credits23.json";
+import credits22 from "./../DataFiles/Credits/Credits22.json";
 import "./CPI.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
